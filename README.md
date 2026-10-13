@@ -41,7 +41,7 @@ A static site with no build step, served by GitHub Pages. It uses the inquiredu 
 index.html, learn.html, glossary.html, commands.html, tools.html, check.html
 assets/inquiredu.css    inquiredu design system tokens and base styles (do not edit; regenerate from the design system)
 assets/style.css        site layout and components on inquiredu tokens
-assets/brand/           inquiredu wordmark and endorsed lockup SVGs
+assets/brand/           inquiredu wordmark SVGs
 assets/core.js          shared helpers: saved progress, copy buttons, data loading
 assets/<page>.js        one script per page
 data/lessons.json       paths and lessons
