@@ -1,0 +1,62 @@
+[
+{"id":"what-claude-is","path":"start","title":"What Claude is, and isn't","minutes":6,
+ "why":"Knowing how Claude produces an answer tells you when to lean on it and when to double-check.",
+ "idea":["Claude is a large language model. It writes by predicting what text should come next, one small piece at a time, based on everything in the conversation so far. Trained at huge scale, that simple process makes it very good at drafting, explaining, summarizing, and working through problems.",
+  "The same process explains its limits. It can say something false in a confident voice, a failure called hallucination. Without web search, it doesn't know about events after its training cutoff. And it only knows what you've told it about your situation.",
+  "So treat Claude like a fast, well-read collaborator who has never met you: give it context, and check the parts that matter."],
+ "try":{"intro":"Test Claude on a subject you already know well, so you can judge the answer yourself.","prompt":"Explain [a topic you know well, like your job, a hobby, or your hometown] to a curious 12-year-old in under 150 words. Then list two things people commonly get wrong about it.","steps":["Open Claude and start a new chat.","Paste the prompt and replace the bracketed part.","Read the answer as the expert you are."]},
+ "check":["I found at least one thing it got right that I'd want a beginner to know.","I looked for anything oversimplified or wrong, and noted it.","I can explain in one sentence why Claude can sound sure and still be wrong."],
+ "quiz":[
+  {"q":"How does Claude produce an answer?","options":["It looks up a stored answer in a database","It predicts likely text, piece by piece, from the conversation so far","It copies the most popular web page on the topic","A person reviews and writes each reply"],"answer":1,"explain":"Language models generate text by predicting what comes next. That's why answers are fluent, and also why they can be fluently wrong."},
+  {"q":"You ask about something that happened yesterday, and web search is off. What should you expect?","options":["A reliable, detailed answer","Claude may not know, or may guess","Claude will refuse to talk about news","An error message"],"answer":1,"explain":"Without search, Claude only knows what was in its training data, which stops at its knowledge cutoff."}],
+ "terms":["Large language model (LLM)","Hallucination","Knowledge cutoff"]},
+
+{"id":"say-what-good-looks-like","path":"start","title":"Say what good looks like","minutes":8,
+ "why":"Most disappointing answers come from prompts that leave Claude guessing about the goal, the reader, or the finish line.",
+ "idea":["A strong prompt answers four questions: What do you want? Who is it for? What does Claude need to know? What does a good result look like? You don't need special phrasing. Write it the way you'd brief a capable new colleague.",
+  "The last question matters most and gets skipped most. \"Write an email to parents\" leaves everything open. \"Write a 120-word email to parents about Friday's early release; warm, plain language, one clear action at the end\" tells Claude exactly when it's done.",
+  "Several popular cheat sheets boil this down to one line: I want to [task] so that [success criteria]. It's a handy starting shape, not a magic formula."],
+ "try":{"intro":"Take a vague request and make it specific, then compare the results.","prompt":"Version 1: Write a thank-you note to a coworker.\n\nVersion 2: Write a thank-you note to my coworker [name], who [what they did]. It's for a card, so keep it under 60 words. Warm but not gushing, and mention one specific way it helped.","steps":["Send Version 1 in one chat.","Send Version 2, filled in, in a new chat.","Put the two answers side by side."]},
+ "check":["Version 2 needed fewer edits before I'd actually use it.","I can name which detail made the biggest difference.","I wrote down one success criterion I'll reuse in future prompts."],
+ "quiz":[
+  {"q":"Which detail most often turns a vague prompt into a useful one?","options":["Saying please","Using technical keywords","Describing what a good result looks like","Writing in all caps"],"answer":2,"explain":"Success criteria, like length, audience, tone, and what must be included, tell Claude what finished means."},
+  {"q":"What's the best mental model for writing a prompt?","options":["A search engine query","Briefing a capable new colleague","A secret code","A one-word command"],"answer":1,"explain":"A new colleague is smart but lacks your context. Give them the goal, the audience, and the finish line."}],
+ "credit":{"text":"The one-line \"I want to [task] so that [success criteria]\" shape appears in Ruben Hassid's How to AI infographics.","url":"https://how-to-ai.guide"},
+ "sources":[{"title":"Anthropic: Prompt engineering overview","url":"https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview"}],
+ "terms":["Prompt"]},
+
+{"id":"let-claude-ask-first","path":"start","title":"Let Claude ask first","minutes":6,
+ "why":"You don't have to know everything up front. Letting Claude interview you surfaces the details you didn't think to mention.",
+ "idea":["When a task has a lot of unknowns, add one sentence to your prompt: \"Ask me clarifying questions before you start.\" Claude will stop and ask about audience, scope, tone, or constraints before writing anything.",
+  "This flips the work. Instead of crafting a perfect prompt, you answer a few targeted questions. Depending on where you use Claude, the questions may appear as clickable choices you can tap.",
+  "It's most useful for anything with real stakes: a plan, a policy draft, a hard message. For a quick question, skip it."],
+ "try":{"intro":"Hand Claude a loose task and let it interview you.","prompt":"I need to plan [something real you're working on, like a team meeting, a trip, or a class unit]. Ask me clarifying questions until you have enough context, then propose a plan. Ask no more than five questions at a time.","steps":["Send the prompt with your real task filled in.","Answer the questions honestly, including \"I don't know\" where true.","Read the plan it proposes."]},
+ "check":["At least one question raised something I hadn't thought about.","The plan reflects my answers, not a generic template.","I know when this technique is worth the extra minute and when it isn't."],
+ "quiz":[
+  {"q":"When is asking Claude to ask clarifying questions most worth it?","options":["Every message, always","Tasks with many unknowns or real stakes","Simple factual questions","Never; it slows things down"],"answer":1,"explain":"For quick questions it adds friction. For plans, drafts, and decisions, it catches gaps early."}],
+ "terms":["Prompt"]},
+
+{"id":"iterate-dont-restart","path":"start","title":"Iterate, don't restart","minutes":7,
+ "why":"The first answer is a draft. The real value comes from the second and third rounds.",
+ "idea":["When an answer is close but not right, don't start over. Tell Claude specifically what to keep and what to change: \"Keep the opening. Cut the third paragraph. Make the ending one sentence.\" Specific feedback beats \"make it better\" every time.",
+  "Ask for options when you're not sure what you want. \"Give me three different openings: one formal, one warm, one blunt\" lets you react instead of describing.",
+  "Do start fresh when a conversation gets very long or wanders off course. Older details can get less attention as a chat grows. Ask Claude to summarize where things stand, then paste that summary into a new chat."],
+ "try":{"intro":"Take one draft through three rounds of specific feedback.","prompt":"Write a short bio for me to use when I introduce myself at a [meeting, event, or website]. Here's what to include: [3 to 4 facts about you].","steps":["Send the prompt.","Round 1: ask for three versions in different tones.","Round 2: pick one and give one keep, one cut, one change.","Round 3: ask for it at half the length."]},
+ "check":["My final version is noticeably better than the first.","My feedback named specific parts, not just \"better\" or \"shorter.\"","I know the sign that it's time to start a fresh chat."],
+ "quiz":[
+  {"q":"Which feedback will get the best revision?","options":["\"Make it better.\"","\"I don't like it.\"","\"Keep the first line, cut the jargon in paragraph two, end with a question.\"","\"Try again.\""],"answer":2,"explain":"Naming what to keep and what to change gives Claude a clear target."},
+  {"q":"A chat has gone on for hours and answers are drifting. What helps?","options":["Keep going; it'll recover","Ask for a summary, then continue in a new chat","Type in all caps","Switch to a shorter word count"],"answer":1,"explain":"A fresh chat with a tight summary brings back focus without losing what you decided."}],
+ "terms":["Context window"]},
+
+{"id":"check-before-you-trust","path":"start","title":"Check before you trust","minutes":8,
+ "why":"Claude is often right, but right often isn't always. A few habits catch most mistakes.",
+ "idea":["Match your checking to the stakes. A brainstorm needs none. A fact you'll repeat to others, a number in a report, a legal or medical point, or a quote needs a source you've looked at yourself.",
+  "Ask Claude to help you check it: \"Which of these claims are you least sure about?\" and \"Give me sources I can verify.\" With web search on, Claude can cite pages; open them, because a citation is only as good as what the page actually says.",
+  "Watch for the classic warning signs: very specific numbers with no source, quotes that sound too perfect, and references to studies, books, or cases you can't find. Those are where hallucinations hide."],
+ "try":{"intro":"Run a quick fact-check on Claude's own answer.","prompt":"Give me five surprising facts about [a topic you're curious about]. For each, rate your confidence as high, medium, or low, and tell me how I could verify it.","steps":["Send the prompt.","Pick the fact with the lowest confidence.","Verify it yourself with a search or a source you trust."]},
+ "check":["I verified at least one claim with a source I looked at myself.","I can name two warning signs of a possible hallucination.","I know which of my own tasks need checking every time."],
+ "quiz":[
+  {"q":"Claude cites a study you can't find anywhere. What's the most likely explanation?","options":["The study is secret","It may be a hallucination","Your search engine is broken","Claude has special access"],"answer":1,"explain":"Made-up citations are a known failure. If you can't find a source, don't use the claim."},
+  {"q":"Which task needs the most checking?","options":["Brainstorming party themes","Rewording an email for tone","A statistic you'll present to your board","Naming a pet"],"answer":2,"explain":"Check in proportion to stakes. Numbers you'll repeat publicly need a verified source."}],
+ "terms":["Hallucination","Retrieval-augmented generation (RAG)"]}
+]

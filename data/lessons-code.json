@@ -1,0 +1,51 @@
+[
+{"id":"meet-claude-code","path":"code","title":"Meet Claude Code","minutes":10,
+ "why":"Claude Code is Claude working directly in your files: it can read a project, make changes, and run commands, not just talk about them.",
+ "idea":["In a regular chat, Claude suggests and you copy. Claude Code is an agent: it reads your project, edits files, runs commands like tests, and works with git, checking in with you along the way.",
+  "It runs in several places that share the same engine: a terminal, VS Code and JetBrains editors, the Claude desktop app, and the web. Most of them need a paid Claude plan or an Anthropic Console account.",
+  "You don't have to be a professional developer to get value from it. It's also useful for organizing files, building small tools, and automating chores on your computer."],
+ "try":{"intro":"Install Claude Code and confirm it runs.","prompt":"curl -fsSL https://claude.ai/install.sh | bash","steps":["On a Mac or Linux, open Terminal. On Windows, follow the install page for PowerShell or CMD.","Paste the install command above and press Enter. It shows no progress while downloading; that's normal.","Open a new terminal window and type: claude --version","If you'd rather skip the terminal, the desktop app includes Claude Code under its Code tab."],"open":"https://code.claude.com/docs","openLabel":"Open the install guide"},
+ "check":["Running claude --version prints a version number, or I've opened the Code tab in the desktop app.","I can explain how Claude Code differs from a regular chat in one sentence.","I know where to look if the install fails."],
+ "quiz":[
+  {"q":"What can Claude Code do that a regular chat can't?","options":["Answer questions","Write in different tones","Edit files and run commands in your project","Translate languages"],"answer":2,"explain":"Claude Code acts in your files and terminal. A chat can only suggest what to do."}],
+ "sources":[{"title":"Claude Code overview","url":"https://code.claude.com/docs"}],
+ "terms":["Claude Code","AI agent"]},
+
+{"id":"give-it-a-map","path":"code","title":"Give it a map with CLAUDE.md","minutes":8,
+ "why":"Claude Code starts each session fresh. A CLAUDE.md file tells it how your project works so you don't repeat yourself.",
+ "idea":["CLAUDE.md is a plain text file in your project folder that Claude Code reads at the start of every session. Put in it what a new teammate would need: what the project is, how to run it, conventions to follow, and things to avoid.",
+  "You don't have to write it from scratch. Type /init and Claude Code looks around your project and drafts one. Then edit it like any document; /memory opens it anytime.",
+  "Keep it short and specific. A few clear rules beat a long essay, and you can add to it whenever you catch yourself explaining the same thing twice."],
+ "try":{"intro":"Generate a CLAUDE.md for a real folder and improve it.","prompt":"/init","steps":["In a terminal, go to a project folder (any folder of documents or code works) and type: claude","Type /init and let it draft CLAUDE.md.","Open the file and add one rule in your own words, like \"Always ask before deleting files.\"","Type /memory to see where your instruction files live."]},
+ "check":["My folder now has a CLAUDE.md file.","I added at least one rule of my own.","I know that /memory is where to manage it later."],
+ "quiz":[
+  {"q":"When does Claude Code read CLAUDE.md?","options":["Only when you mention it","At the start of every session","Once, when you install","Never; it's for humans"],"answer":1,"explain":"It's loaded each session, which is why it's the place for standing instructions."}],
+ "sources":[{"title":"Commands","url":"https://code.claude.com/docs/en/commands"},{"title":"How Claude remembers your project","url":"https://code.claude.com/docs/en/memory"}],
+ "terms":["Claude Code","Context window"]},
+
+{"id":"stay-in-control","path":"code","title":"Stay in control","minutes":9,
+ "why":"An agent that edits files needs clear brakes. Claude Code has several, and knowing them makes it safe to experiment.",
+ "idea":["By default Claude Code asks before it changes files or runs commands. Press Shift+Tab to cycle permission modes: manual (asks first), accept edits, and plan. In plan mode it researches and proposes a plan without changing anything, which is a good way to start any bigger task.",
+  "Press Esc to stop Claude mid-response and redirect it; the work so far is kept. If a change goes wrong, /rewind rolls the conversation or the file changes back to an earlier point. Pressing Esc twice on an empty prompt opens the same rewind menu.",
+  "Before you accept work, look at it: /diff shows every file change. For anything shared with others, /code-review checks your changes for bugs and /security-review checks them for security risks."],
+ "try":{"intro":"Practice the brakes on a harmless task.","prompt":"Create a file called notes.md with a short to-do list for planning a picnic. Plan first; don't change anything until I approve.","steps":["Start claude in a test folder and press Shift+Tab until you're in plan mode.","Send the prompt and read the plan before approving.","After it creates the file, type /diff to see the change.","Type /rewind and roll the change back."]},
+ "check":["I used plan mode and approved a plan before any file changed.","I saw a change with /diff.","I undid a change with /rewind or Esc Esc."],
+ "quiz":[
+  {"q":"You want Claude Code to propose an approach without touching any files. What do you use?","options":["/clear","Plan mode","/usage","Ctrl+V"],"answer":1,"explain":"Plan mode researches and proposes. Nothing changes until you approve."},
+  {"q":"Claude made a change you don't want. What's the fastest undo?","options":["Delete the folder","/rewind","/help","Reinstall Claude Code"],"answer":1,"explain":"/rewind rolls back the conversation, the file changes, or both, to an earlier point."}],
+ "sources":[{"title":"Commands","url":"https://code.claude.com/docs/en/commands"},{"title":"Interactive mode","url":"https://code.claude.com/docs/en/interactive-mode"}],
+ "terms":["AI agent"]},
+
+{"id":"keep-sessions-healthy","path":"code","title":"Keep sessions healthy","minutes":7,
+ "why":"Long sessions fill up Claude's working memory. A few commands keep it focused and keep you within your plan.",
+ "idea":["Everything in a session, including files Claude has read, counts against its context window. /context shows a grid of what's taking up room. /compact summarizes the conversation so far and keeps going with more space.",
+  "When you switch to an unrelated task, /clear starts fresh. Your old conversation isn't lost: /resume reopens it later, and claude -c continues the most recent one in the current folder.",
+  "/usage shows what this session cost and where you stand against your plan's limits. For harder problems, /effort raises how hard Claude thinks; for one tough question, include the word ultrathink in your message."],
+ "try":{"intro":"Check, trim, and resume a session.","prompt":"/context","steps":["In any session, type /context and look at what's using space.","Type /compact and keep working.","Type /clear, then /resume and reopen the earlier conversation.","Type /usage to see where you stand."]},
+ "check":["I can find out what's filling Claude's context.","I know the difference between /compact and /clear.","I can get back to an earlier conversation."],
+ "quiz":[
+  {"q":"You're switching to a totally different task. Which command fits best?","options":["/compact","/clear","/effort","ultrathink"],"answer":1,"explain":"/clear gives a clean slate for unrelated work, and the old conversation stays resumable."},
+  {"q":"Which word in a message asks for deeper reasoning on that one turn?","options":["think harder","ultra think","ultrathink","maxthink"],"answer":2,"explain":"Per the docs, ultrathink (one word) is the keyword. \"Think harder\" is read as ordinary text, despite what some cheat sheets say."}],
+ "sources":[{"title":"Commands","url":"https://code.claude.com/docs/en/commands"},{"title":"Model configuration","url":"https://code.claude.com/docs/en/model-config"},{"title":"CLI reference","url":"https://code.claude.com/docs/en/cli-reference"}],
+ "terms":["Context window","Token","Extended thinking"]}
+]

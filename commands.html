@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Commands · Claude Field Guide</title>
+<meta name="description" content="Every Claude Code command from two viral cheat sheets, checked against Anthropic's docs, in plain language.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#cmds">Skip to the commands</a>
+<nav class="topnav" aria-label="Site"><div class="in">
+  <a class="brand" href="./"><img src="assets/favicon.svg" alt="">Claude Field Guide</a>
+  <div class="links"><a href="learn.html">Learn</a><a href="glossary.html">Glossary</a><a href="commands.html" aria-current="page">Commands</a><a href="tools.html">Tools</a><a href="check.html">Sheet check</a></div>
+</div></nav>
+<div class="wrap">
+  <header class="page-head">
+    <div class="eyebrow" id="ceyebrow">Claude Code · checked against the docs</div>
+    <h1>Claude Code <span style="color:var(--accent)">commands</span></h1>
+    <p class="lede">Two cheat sheets from March 2026 listed 125 commands, shortcuts, and settings. Each one was checked against Anthropic's Claude Code documentation. Most hold up; some changed names or behavior, and a few don't exist. Ten current commands the sheets missed are included too.</p>
+    <div class="tally" id="cstamps" role="group" aria-label="Filter by result"></div>
+  </header>
+  <div class="controls">
+    <div class="row">
+      <label class="sr" for="cq">Search commands</label>
+      <input id="cq" type="search" placeholder="Search: memory, thinking, worktree, /init…" autocomplete="off">
+    </div>
+    <div class="chips" id="kinds" role="group" aria-label="Filter by type"></div>
+    <div class="count" id="ccount" aria-live="polite"></div>
+  </div>
+  <main id="cmds"></main>
+  <footer id="csrc"></footer>
+</div>
+<script src="assets/core.js"></script>
+<script src="assets/commands.js"></script>
+</body>
+</html>

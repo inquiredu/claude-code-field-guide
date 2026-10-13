@@ -1,0 +1,1429 @@
+{
+ "checked_on": "2026-10-13",
+ "sources": [
+  {
+   "title": "Commands",
+   "url": "https://code.claude.com/docs/en/commands"
+  },
+  {
+   "title": "CLI reference",
+   "url": "https://code.claude.com/docs/en/cli-reference"
+  },
+  {
+   "title": "Interactive mode",
+   "url": "https://code.claude.com/docs/en/interactive-mode"
+  },
+  {
+   "title": "Customize keyboard shortcuts",
+   "url": "https://code.claude.com/docs/en/keybindings"
+  },
+  {
+   "title": "How Claude remembers your project",
+   "url": "https://code.claude.com/docs/en/memory"
+  },
+  {
+   "title": "Model configuration",
+   "url": "https://code.claude.com/docs/en/model-config"
+  },
+  {
+   "title": "Fast mode",
+   "url": "https://code.claude.com/docs/en/fast-mode"
+  },
+  {
+   "title": "Settings files and precedence",
+   "url": "https://code.claude.com/docs/en/settings"
+  },
+  {
+   "title": "Extend Claude with skills",
+   "url": "https://code.claude.com/docs/en/skills"
+  },
+  {
+   "title": "Create custom subagents",
+   "url": "https://code.claude.com/docs/en/sub-agents"
+  },
+  {
+   "title": "Environment variables",
+   "url": "https://code.claude.com/docs/en/env-vars"
+  },
+  {
+   "title": "MCP",
+   "url": "https://code.claude.com/docs/en/mcp"
+  },
+  {
+   "title": "Use Claude Code in the cloud",
+   "url": "https://code.claude.com/docs/en/claude-code-on-the-web"
+  },
+  {
+   "title": "Agent view",
+   "url": "https://code.claude.com/docs/en/agent-view"
+  },
+  {
+   "title": "Run prompts on a schedule",
+   "url": "https://code.claude.com/docs/en/scheduled-tasks"
+  }
+ ],
+ "sheets": [
+  {
+   "title": "Every Claude Code Command (93 commands, March 2026)",
+   "author": "Charlie Hills",
+   "community": "AIToolsPromptWorkflow"
+  },
+  {
+   "title": "Claude Code Cheat Sheet (v2.1.81, March 24, 2026)",
+   "author": "unknown",
+   "community": "vibecoders_"
+  }
+ ],
+ "items": [
+  {
+   "cmd": "/init",
+   "kind": "slash",
+   "group": "Start & memory",
+   "verdict": "documented",
+   "desc": "Creates a CLAUDE.md guide file so Claude learns how your project works.",
+   "sheet_said": "Generate CLAUDE.md",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/memory",
+   "kind": "slash",
+   "group": "Start & memory",
+   "verdict": "documented",
+   "desc": "Opens your CLAUDE.md instruction files and lets you turn auto memory on or off and view it.",
+   "sheet_said": "Edit CLAUDE.md",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/context",
+   "kind": "slash",
+   "group": "Context",
+   "verdict": "documented",
+   "desc": "Shows a color grid of what is filling Claude's working memory, with tips to free space.",
+   "sheet_said": "What's consuming context",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/compact",
+   "kind": "slash",
+   "group": "Context",
+   "verdict": "documented",
+   "desc": "Summarizes the conversation so far to free up room, keeping the thread going.",
+   "sheet_said": "Compact conversation",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/clear",
+   "kind": "slash",
+   "group": "Context",
+   "verdict": "documented",
+   "desc": "Starts a fresh conversation with empty context; the old one stays resumable.",
+   "sheet_said": "Clear conversation",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/resume",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Reopens an earlier conversation by name or from a picker.",
+   "sheet_said": "Resume a session",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/fork",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "different",
+   "desc": "Copies the conversation into a separate background session while you keep working here. Use /branch to switch into a copy.",
+   "sheet_said": "Branch conversation",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/branch",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Splits off a copy of the conversation to try another direction; the original stays available.",
+   "sheet_said": "Fork renamed to /branch",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/rename",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Gives the current session a name you can find and resume later.",
+   "sheet_said": "Rename session",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/add-dir",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Lets Claude read and edit files in another folder during this session.",
+   "sheet_said": "Add a working directory",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/copy",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Copies Claude's last reply, or a chosen code block, to your clipboard.",
+   "sheet_said": "Copy last response",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/export",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Saves the conversation as plain text to a file or the clipboard.",
+   "sheet_said": "Export conversation",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/rewind",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Rolls the conversation and/or file changes back to an earlier point. Also /checkpoint and /undo.",
+   "sheet_said": "Rewind",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/tasks",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Shows background work in this session, such as running commands and helper agents.",
+   "sheet_said": "Background tasks",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/btw",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Ask a quick side question about the session without adding it to the main conversation.",
+   "sheet_said": "Side question",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/color",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Changes the color of the prompt bar for this session.",
+   "sheet_said": "Set prompt bar color",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/desktop",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Moves the current session into the Claude Code desktop app (macOS and Windows x64).",
+   "sheet_said": "Continue in desktop app",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/remote-control",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Makes this terminal session reachable from claude.ai or the Claude phone app.",
+   "sheet_said": "Remote control",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/rc",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Short alias for /remote-control.",
+   "sheet_said": "Remote control",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/remote",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "not_found",
+   "desc": "No /remote command. Start cloud sessions with claude --cloud; pull them back with /teleport.",
+   "sheet_said": "Web session",
+   "source_url": "https://code.claude.com/docs/en/claude-code-on-the-web",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/usage",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Shows session cost, plan usage limits, and activity stats in one place.",
+   "sheet_said": "Token usage vs plan limits",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/cost",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "different",
+   "desc": "Now just another name for /usage.",
+   "sheet_said": "Cost",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/stats",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "different",
+   "desc": "Now an alias for /usage, opening on its Stats tab. The HTML report is /insights.",
+   "sheet_said": "Usage stats as HTML report",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/insights",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Builds an HTML report on how you use Claude Code, where things go wrong, and features to try.",
+   "sheet_said": "Usage insights",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/extra-usage",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "different",
+   "desc": "Renamed /usage-credits: set up or request extra paid usage when you hit a limit.",
+   "sheet_said": "Extra usage",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/upgrade",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Opens the page to move to a higher plan.",
+   "sheet_said": "Upgrade plan",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/help",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Lists help and available commands.",
+   "sheet_said": "Help",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/doctor",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Runs a setup checkup that finds problems and can fix them.",
+   "sheet_said": "Diagnose installation",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/debug",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Turns on debug logging and helps troubleshoot from the session's log.",
+   "sheet_said": "Debug",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/release-notes",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Shows the changelog with a version picker.",
+   "sheet_said": "Release notes",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/feedback",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "different",
+   "desc": "Sends product feedback. /bug is its own command that opens the same dialog, not just an alias.",
+   "sheet_said": "Feedback (alias /bug)",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/stickers",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Order Claude Code stickers.",
+   "sheet_said": "Stickers",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/model",
+   "kind": "slash",
+   "group": "Models & thinking",
+   "verdict": "documented",
+   "desc": "Switches the AI model and saves it as your default.",
+   "sheet_said": "Switch model",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/effort",
+   "kind": "slash",
+   "group": "Models & thinking",
+   "verdict": "different",
+   "desc": "Sets how hard Claude thinks: low, medium, high, xhigh, max, or auto, depending on model.",
+   "sheet_said": "low/medium/high/auto",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/fast",
+   "kind": "slash",
+   "group": "Models & thinking",
+   "verdict": "different",
+   "desc": "Toggles fast mode: Opus up to 2.5x faster at higher cost. Now Opus 5 and 4.8, not 4.6.",
+   "sheet_said": "Opus 4.6 at 2.5x speed",
+   "source_url": "https://code.claude.com/docs/en/fast-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/plan",
+   "kind": "slash",
+   "group": "Models & thinking",
+   "verdict": "documented",
+   "desc": "Switches to plan mode, where Claude researches and proposes a plan before changing code.",
+   "sheet_said": "Read-only planning",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/vim",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "different",
+   "desc": "Removed. Turn vim-style editing on through /config, then Editor mode.",
+   "sheet_said": "Toggle vim mode",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/output-style",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Lists output styles or switches to one, changing how Claude responds.",
+   "sheet_said": "Output style",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/voice",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Turns voice dictation on or off (needs a Claude.ai account).",
+   "sheet_said": "Voice",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/config",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Opens the settings screen for theme, model, and other preferences.",
+   "sheet_said": "Settings",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/terminal-setup",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Sets up Shift+Enter for new lines in terminals that need it.",
+   "sheet_said": "Shift+Enter setup",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/keybindings",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Opens your custom keyboard-shortcut file.",
+   "sheet_said": "Keybindings",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/status-line",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "different",
+   "desc": "The real name is /statusline (no hyphen); it configures the info bar under the prompt.",
+   "sheet_said": "Status line",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/theme",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Changes the color theme, including colorblind-friendly options.",
+   "sheet_said": "Theme",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/login",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Sign in to your Anthropic account.",
+   "sheet_said": "Login",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/logout",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Sign out of your Anthropic account.",
+   "sheet_said": "Logout",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/permissions",
+   "kind": "slash",
+   "group": "Permissions & safety",
+   "verdict": "documented",
+   "desc": "Manage which tools Claude may use without asking, must ask about, or can't use.",
+   "sheet_said": "Permissions",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/sandbox",
+   "kind": "slash",
+   "group": "Permissions & safety",
+   "verdict": "documented",
+   "desc": "Turns sandbox mode on or off where supported.",
+   "sheet_said": "Sandbox",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/hooks",
+   "kind": "slash",
+   "group": "Permissions & safety",
+   "verdict": "documented",
+   "desc": "Shows the automatic scripts (hooks) set to run at certain moments.",
+   "sheet_said": "Hooks",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/agents",
+   "kind": "slash",
+   "group": "Tools & integrations",
+   "verdict": "different",
+   "desc": "Now only prints a reminder: ask Claude to make helper agents, or edit the agents folders directly.",
+   "sheet_said": "Manage subagents",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/install-github-app",
+   "kind": "slash",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Installs the Claude GitHub app on a repository, optionally with GitHub Actions.",
+   "sheet_said": "Install GitHub app",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/plugin",
+   "kind": "slash",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Browse, install, enable, or disable plugins.",
+   "sheet_said": "Plugins",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/reload-plugins",
+   "kind": "slash",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Reloads plugins so changes apply without restarting.",
+   "sheet_said": "Reload plugins",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/mcp",
+   "kind": "slash",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Manage connections to outside tools (MCP servers) and their sign-ins.",
+   "sheet_said": "MCP",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/skills",
+   "kind": "slash",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Lists the skills available and lets you hide or show them.",
+   "sheet_said": "Skills",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/find-skills",
+   "kind": "slash",
+   "group": "Tools & integrations",
+   "verdict": "not_found",
+   "desc": "Not in the docs. Closest: /skills to list, /skill-doctor to see each skill's cost and use.",
+   "sheet_said": "Find skills",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/chrome",
+   "kind": "slash",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Configures the Claude in Chrome browser connection.",
+   "sheet_said": "Chrome",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/ide",
+   "kind": "slash",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Manages connections to code editors such as VS Code.",
+   "sheet_said": "IDE",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/diff",
+   "kind": "slash",
+   "group": "Review & code",
+   "verdict": "documented",
+   "desc": "Shows the file changes in your project, including Claude's edits.",
+   "sheet_said": "Diff",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/review",
+   "kind": "slash",
+   "group": "Review & code",
+   "verdict": "documented",
+   "desc": "Alias of /code-review: checks your changes or a pull request for bugs.",
+   "sheet_said": "PR review",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/pr-comments",
+   "kind": "slash",
+   "group": "Review & code",
+   "verdict": "different",
+   "desc": "Removed. Ask Claude directly to read a pull request's comments.",
+   "sheet_said": "PR comments",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/security-review",
+   "kind": "slash",
+   "group": "Review & code",
+   "verdict": "documented",
+   "desc": "Checks your branch's changes for security risks like leaks or injection.",
+   "sheet_said": "Security review",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/simplify",
+   "kind": "slash",
+   "group": "Review & code",
+   "verdict": "different",
+   "desc": "Four review agents (not three) look for cleanup and apply fixes; it does not hunt for bugs.",
+   "sheet_said": "3-agent review",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/batch",
+   "kind": "slash",
+   "group": "Review & code",
+   "verdict": "documented",
+   "desc": "Splits a big change into 5-30 pieces and runs them in parallel, each in its own copy of the code.",
+   "sheet_said": "Parallel changes across worktrees",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/loop",
+   "kind": "slash",
+   "group": "Automation",
+   "verdict": "documented",
+   "desc": "Repeats a prompt on an interval while the session stays open.",
+   "sheet_said": "Run prompt on recurring schedule",
+   "source_url": "https://code.claude.com/docs/en/scheduled-tasks",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/schedule",
+   "kind": "slash",
+   "group": "Automation",
+   "verdict": "documented",
+   "desc": "Creates and manages routines: tasks that run in the cloud on a schedule or trigger.",
+   "sheet_said": "Cloud scheduled tasks",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Starts an interactive Claude Code session in your terminal.",
+   "sheet_said": "Start",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude \"question\"",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Starts a session with your first question already asked.",
+   "sheet_said": "Start with a question",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude -p",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Answers once and exits, without the interactive screen; good for scripts.",
+   "sheet_said": "Print mode",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude -c",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Continues your most recent conversation in this folder.",
+   "sheet_said": "Continue",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude -r \"ID\"",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Resumes a specific session by ID or name.",
+   "sheet_said": "Resume by ID",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude --from-pr",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Opens the session picker filtered to sessions linked to a pull request.",
+   "sheet_said": "From PR",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude update",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Updates Claude Code to the latest version.",
+   "sheet_said": "Update",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude mcp add/list/remove/serve",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Add, list, or remove outside-tool connections, or run Claude Code itself as one.",
+   "sheet_said": "MCP management",
+   "source_url": "https://code.claude.com/docs/en/mcp",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude auth login/status/logout",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Sign in, check sign-in status, or sign out from the terminal.",
+   "sheet_said": "Auth",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude agents",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Opens agent view to watch and dispatch sessions running in the background.",
+   "sheet_said": "Agents",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude rc",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "different",
+   "desc": "Not a subcommand. Use 'claude remote-control' (server mode) or the '--rc' flag.",
+   "sheet_said": "Remote control",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude plugin",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Manage plugins from the terminal.",
+   "sheet_said": "Plugins",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "claude config list/set",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "not_found",
+   "desc": "Not in current docs. Use /config in a session or edit settings.json.",
+   "sheet_said": "Config list/set",
+   "source_url": "https://code.claude.com/docs/en/settings",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--dangerously-skip-permissions",
+   "kind": "cli",
+   "group": "Permissions & safety",
+   "verdict": "documented",
+   "desc": "Skips all permission prompts. Use only in isolated environments.",
+   "sheet_said": "Skip permissions",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--permission-mode",
+   "kind": "cli",
+   "group": "Permissions & safety",
+   "verdict": "documented",
+   "desc": "Starts in a chosen mode: default, acceptEdits, plan, auto, dontAsk, or bypassPermissions.",
+   "sheet_said": "Permission mode",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--worktree",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Starts Claude in a separate copy of your git repo so work stays isolated.",
+   "sheet_said": "Worktree",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--model opus",
+   "kind": "cli",
+   "group": "Models & thinking",
+   "verdict": "documented",
+   "desc": "Picks the model for this session by alias or full name.",
+   "sheet_said": "Model",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--agents '{json}'",
+   "kind": "cli",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Defines temporary helper agents for this session from JSON.",
+   "sheet_said": "Agents JSON",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--append-system-prompt",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Adds your own instructions to the end of Claude's built-in instructions.",
+   "sheet_said": "Append system prompt",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--max-turns N",
+   "kind": "cli",
+   "group": "Automation",
+   "verdict": "documented",
+   "desc": "Caps how many steps Claude takes in print mode (-p) only.",
+   "sheet_said": "Max turns",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--bare",
+   "kind": "cli",
+   "group": "Automation",
+   "verdict": "documented",
+   "desc": "Minimal fast start that skips hooks, skills, plugins, MCP, memory, and CLAUDE.md.",
+   "sheet_said": "Bare flag",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--channels",
+   "kind": "cli",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Research preview: listen for notifications from chosen MCP channel servers.",
+   "sheet_said": "Channels",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--remote",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "different",
+   "desc": "Deprecated alias for --cloud, which starts a new cloud session.",
+   "sheet_said": "Remote web session",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--chrome",
+   "kind": "cli",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Turns on the Chrome browser connection.",
+   "sheet_said": "Chrome",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--json-schema",
+   "kind": "cli",
+   "group": "Automation",
+   "verdict": "documented",
+   "desc": "Makes print mode return JSON matching a schema you supply.",
+   "sheet_said": "JSON schema",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--max-budget-usd",
+   "kind": "cli",
+   "group": "Automation",
+   "verdict": "documented",
+   "desc": "Stops a print-mode run once estimated spend reaches a dollar cap.",
+   "sheet_said": "Budget cap",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "--console",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "different",
+   "desc": "Not a top-level flag; it's 'claude auth login --console' to bill via Anthropic Console.",
+   "sheet_said": "Console",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Esc",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Stops Claude mid-response so you can redirect; work so far is kept.",
+   "sheet_said": "Stop",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Esc Esc",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Clears your draft; with an empty prompt, opens the rewind menu.",
+   "sheet_said": "Rewind menu",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Shift+Tab",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "different",
+   "desc": "Cycles permission modes: Manual (default), accept edits, plan, and when enabled bypass and auto.",
+   "sheet_said": "Cycle normal/auto-accept/plan",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Tab",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "different",
+   "desc": "Accepts autocomplete. Extended thinking is toggled with Option/Alt+T.",
+   "sheet_said": "Toggle extended thinking",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Alt/Option+T",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Turns extended thinking on or off (no effect on models that always think).",
+   "sheet_said": "Toggle thinking",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Alt+P",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Switch models without clearing your prompt.",
+   "sheet_said": "Switch model",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Ctrl+F",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "different",
+   "desc": "Not bound. Stop all background agents with Ctrl+X then Ctrl+K, pressed twice.",
+   "sheet_said": "Stop all background agents",
+   "source_url": "https://code.claude.com/docs/en/keybindings",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Ctrl+V",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Pastes an image from your clipboard (Alt+V on Windows).",
+   "sheet_said": "Paste image",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Ctrl+R",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Searches back through your earlier prompts.",
+   "sheet_said": "Reverse search history",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Ctrl+O",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Opens the transcript viewer with full tool details.",
+   "sheet_said": "Verbose",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Ctrl+B",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Sends a running command or agent to the background.",
+   "sheet_said": "Background task",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Ctrl+T",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Shows or hides Claude's to-do checklist (not background tasks).",
+   "sheet_said": "Task list",
+   "source_url": "https://code.claude.com/docs/en/keybindings",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Ctrl+G",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Opens your prompt in your text editor.",
+   "sheet_said": "Open prompt in editor",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "@filename",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Mentions a file so Claude reads it; autocompletes paths.",
+   "sheet_said": "Reference file",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "#content",
+   "kind": "shortcut",
+   "group": "Start & memory",
+   "verdict": "not_found",
+   "desc": "No # memory shortcut in current docs. Use /memory or ask Claude to remember.",
+   "sheet_said": "Add to CLAUDE.md",
+   "source_url": "https://code.claude.com/docs/en/memory",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "!command",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Runs a shell command directly and shares its output with Claude.",
+   "sheet_said": "Run shell",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "& task",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "not_found",
+   "desc": "No & prefix in docs. Use /background, Ctrl+B, or claude --bg instead.",
+   "sheet_said": "Run in background",
+   "source_url": "https://code.claude.com/docs/en/agent-view",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "\"Think harder\"",
+   "kind": "keyword",
+   "group": "Models & thinking",
+   "verdict": "different",
+   "desc": "Not a keyword; passed as ordinary text. Use /effort or 'ultrathink'.",
+   "sheet_said": "High effort",
+   "source_url": "https://code.claude.com/docs/en/model-config",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "\"Ultra think\"",
+   "kind": "keyword",
+   "group": "Models & thinking",
+   "verdict": "different",
+   "desc": "The keyword is 'ultrathink' (one word): deeper reasoning that turn, effort level unchanged.",
+   "sheet_said": "Max reasoning",
+   "source_url": "https://code.claude.com/docs/en/model-config",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "ultrathink",
+   "kind": "keyword",
+   "group": "Models & thinking",
+   "verdict": "documented",
+   "desc": "Asks for deeper reasoning on one turn without changing your effort setting.",
+   "sheet_said": "Ultrathink keyword",
+   "source_url": "https://code.claude.com/docs/en/model-config",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "./CLAUDE.md, ~/.claude/CLAUDE.md, managed",
+   "kind": "file",
+   "group": "Start & memory",
+   "verdict": "documented",
+   "desc": "Project, personal, and organization-wide instruction files; ./.claude/CLAUDE.md and CLAUDE.local.md also work.",
+   "sheet_said": "CLAUDE.md locations",
+   "source_url": "https://code.claude.com/docs/en/memory",
+   "origin": "sheet"
+  },
+  {
+   "cmd": ".claude/rules/*.md",
+   "kind": "file",
+   "group": "Start & memory",
+   "verdict": "documented",
+   "desc": "Split instructions into topic files, optionally scoped to certain paths.",
+   "sheet_said": "Rules files",
+   "source_url": "https://code.claude.com/docs/en/memory",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "@path import",
+   "kind": "file",
+   "group": "Start & memory",
+   "verdict": "documented",
+   "desc": "Pull another file into CLAUDE.md by writing @path/to/file.",
+   "sheet_said": "Import",
+   "source_url": "https://code.claude.com/docs/en/memory",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "~/.claude/projects/<proj>/memory/MEMORY.md",
+   "kind": "file",
+   "group": "Start & memory",
+   "verdict": "documented",
+   "desc": "Where Claude keeps its own auto memory notes per repository; index loads each session.",
+   "sheet_said": "Auto memory location",
+   "source_url": "https://code.claude.com/docs/en/memory",
+   "origin": "sheet"
+  },
+  {
+   "cmd": ".claude/skills/<name>/, ~/.claude/skills/<name>/",
+   "kind": "file",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Project and personal skill folders, each with a SKILL.md.",
+   "sheet_said": "Skills locations",
+   "source_url": "https://code.claude.com/docs/en/skills",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "Built-in agents Explore/Plan/General",
+   "kind": "file",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Built-ins include Explore (read-only search), Plan, and general-purpose, plus a few others.",
+   "sheet_said": "Built-in agents",
+   "source_url": "https://code.claude.com/docs/en/sub-agents",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "~/.claude/settings.json, .claude/settings.json, .claude/settings.local.json",
+   "kind": "file",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Personal, shared project, and private project settings files.",
+   "sheet_said": "Settings files",
+   "source_url": "https://code.claude.com/docs/en/settings",
+   "origin": "sheet"
+  },
+  {
+   "cmd": ".mcp.json",
+   "kind": "file",
+   "group": "Tools & integrations",
+   "verdict": "documented",
+   "desc": "Project file listing shared outside-tool (MCP) connections.",
+   "sheet_said": "MCP project file",
+   "source_url": "https://code.claude.com/docs/en/mcp",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "ANTHROPIC_API_KEY",
+   "kind": "env",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "API key; when set it is used instead of your subscription.",
+   "sheet_said": "API key",
+   "source_url": "https://code.claude.com/docs/en/env-vars",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "ANTHROPIC_MODEL",
+   "kind": "env",
+   "group": "Models & thinking",
+   "verdict": "documented",
+   "desc": "Sets which model to use.",
+   "sheet_said": "Model",
+   "source_url": "https://code.claude.com/docs/en/env-vars",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "CLAUDE_CODE_EFFORT_LEVEL",
+   "kind": "env",
+   "group": "Models & thinking",
+   "verdict": "documented",
+   "desc": "Sets the effort level; overrides --effort and /effort.",
+   "sheet_said": "Effort level",
+   "source_url": "https://code.claude.com/docs/en/env-vars",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "MAX_THINKING_TOKENS",
+   "kind": "env",
+   "group": "Models & thinking",
+   "verdict": "different",
+   "desc": "Mainly used as =0 to turn thinking off; newest models ignore it and always think.",
+   "sheet_said": "Thinking budget",
+   "source_url": "https://code.claude.com/docs/en/model-config",
+   "origin": "sheet"
+  },
+  {
+   "cmd": "/code-review",
+   "kind": "slash",
+   "group": "Review & code",
+   "verdict": "documented",
+   "desc": "Reviews your changes or a pull request for correctness bugs, with an optional fix pass.",
+   "sheet_said": "",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "missed"
+  },
+  {
+   "cmd": "/usage-credits",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Set up or request extra paid usage when you hit a limit (formerly /extra-usage).",
+   "sheet_said": "",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "missed"
+  },
+  {
+   "cmd": "/subtask",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Hands a side task to a helper that reports back into this conversation.",
+   "sheet_said": "",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "missed"
+  },
+  {
+   "cmd": "/background",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Moves the current session to the background so your terminal is free. Alias /bg.",
+   "sheet_said": "",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "missed"
+  },
+  {
+   "cmd": "/goal",
+   "kind": "slash",
+   "group": "Automation",
+   "verdict": "documented",
+   "desc": "Tells Claude to keep working across turns until a condition you set is met.",
+   "sheet_said": "",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "missed"
+  },
+  {
+   "cmd": "/teleport",
+   "kind": "slash",
+   "group": "Session",
+   "verdict": "documented",
+   "desc": "Pulls a cloud session down into this terminal to continue locally.",
+   "sheet_said": "",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "missed"
+  },
+  {
+   "cmd": "/statusline",
+   "kind": "slash",
+   "group": "Settings",
+   "verdict": "documented",
+   "desc": "Configures the information line shown under the prompt.",
+   "sheet_said": "",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "missed"
+  },
+  {
+   "cmd": "/powerup",
+   "kind": "slash",
+   "group": "Start & memory",
+   "verdict": "documented",
+   "desc": "Short interactive lessons that teach Claude Code features.",
+   "sheet_said": "",
+   "source_url": "https://code.claude.com/docs/en/commands",
+   "origin": "missed"
+  },
+  {
+   "cmd": "claude --cloud",
+   "kind": "cli",
+   "group": "CLI",
+   "verdict": "documented",
+   "desc": "Starts a new session that runs in the cloud and keeps going after you close your laptop.",
+   "sheet_said": "",
+   "source_url": "https://code.claude.com/docs/en/cli-reference",
+   "origin": "missed"
+  },
+  {
+   "cmd": "Option/Alt+O",
+   "kind": "shortcut",
+   "group": "Shortcuts",
+   "verdict": "documented",
+   "desc": "Turns fast mode on or off.",
+   "sheet_said": "",
+   "source_url": "https://code.claude.com/docs/en/interactive-mode",
+   "origin": "missed"
+  }
+ ]
+}

@@ -3,59 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Claude Code Field Guide</title>
-<meta name="description" content="54 Claude Code tools, skills, and MCP servers from a popular cheat sheet, each link checked, broken ones fixed, and every entry explained in plain language.">
-<meta property="og:title" content="Claude Code Field Guide">
-<meta property="og:description" content="Every tool from the viral Claude Code cheat sheet, checked link by link and explained in plain language.">
+<title>Claude Field Guide</title>
+<meta name="description" content="Learn to use Claude by doing: short hands-on lessons, a plain-language glossary, and cheat-sheet claims checked against Anthropic's docs.">
+<meta property="og:title" content="Claude Field Guide">
+<meta property="og:description" content="Learn Claude by doing. Every viral cheat-sheet claim checked against Anthropic's own docs.">
 <meta property="og:type" content="website">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>
+  // Old share links pointed at the tool deck on this page; send them to its new home.
+  if (/^#tool-\d+$/.test(location.hash)) location.replace("tools.html" + location.hash);
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<a class="skip" href="#deck">Skip to the tools</a>
+<a class="skip" href="#paths">Skip to the learning paths</a>
+<nav class="topnav" aria-label="Site"><div class="in">
+  <a class="brand" href="./"><img src="assets/favicon.svg" alt="">Claude Field Guide</a>
+  <div class="links"><a href="learn.html">Learn</a><a href="glossary.html">Glossary</a><a href="commands.html">Commands</a><a href="tools.html">Tools</a><a href="check.html">Sheet check</a></div>
+</div></nav>
 <div class="wrap">
-<header>
-  <div class="eyebrow" id="eyebrow">Field guide · links checked October 13, 2026</div>
-  <h1>Claude Code <span>Field Guide</span></h1>
-  <p class="lede">Every entry from the "Claude Code Resource Bible" cheat sheet, inspected one by one. Each card is stamped with what we found: the link works as described, the link was broken and is now fixed, or the cheat sheet described the tool wrong. Star the ones you want in your stack.</p>
-  <div class="tally" id="tally" role="group" aria-label="Filter by inspection stamp"></div>
-</header>
+  <header class="hero">
+    <div class="eyebrow">Free · no sign-up · checked October 2026</div>
+    <h1>Learn Claude <span style="color:var(--accent)">by doing</span></h1>
+    <p class="lede">Short lessons where you try each idea in Claude right away, then check yourself. Everything here started as a viral cheat sheet; every fact was checked against Anthropic's own documentation, and opinions are labeled as opinions.</p>
+    <div class="row"><a class="btn" id="cta" href="learn.html">Start the first lesson</a><a class="btn ghost" href="check.html">See what the cheat sheets got wrong</a></div>
+  </header>
 
-<div class="controls">
-  <div class="row">
-    <label class="sr" for="q">Search the guide</label>
-    <input id="q" type="search" placeholder="Search: browser, worktree, Figma, deploy…" autocomplete="off">
-    <button class="btn" id="draw" type="button">Draw a card</button>
-    <button class="btn ghost" id="mine" type="button" aria-pressed="false">★ My stack <span id="mineN">0</span></button>
+  <h2 class="section-title" id="paths">Pick a path</h2>
+  <div class="paths" id="path-cards">
+    <a class="path" href="learn.html#what-claude-is"><span class="lvl">New to Claude</span><h3>Start here</h3><p>How Claude works, how to ask for what you want, and how to check its work.</p></a>
+    <a class="path" href="learn.html#choose-a-model"><span class="lvl">Everyday use</span><h3>Make it yours</h3><p>Models, projects, files, connectors, and skills: stop repeating yourself.</p></a>
+    <a class="path" href="learn.html#meet-claude-code"><span class="lvl">Curious builders</span><h3>Build with Claude Code</h3><p>Let Claude work directly in your files, safely.</p></a>
   </div>
-  <div class="chips" id="cats" role="group" aria-label="Filter by category"></div>
-  <div class="count" id="count" aria-live="polite"></div>
+
+  <h2 class="section-title">Reference shelf</h2>
+  <div class="shelf">
+    <a href="glossary.html"><b>Glossary</b><span>AI terms in plain language, with flashcards</span></a>
+    <a href="commands.html"><b>Claude Code commands</b><span>135 commands and shortcuts, checked against the docs</span></a>
+    <a href="tools.html"><b>Tool guide</b><span>54 add-ons and MCP servers, every link tested</span></a>
+    <a href="check.html"><b>Sheet check</b><span>Viral claims: current, outdated, or opinion?</span></a>
+  </div>
+
+  <section class="why-box">
+    <h2>Why this exists</h2>
+    <p>Cheat sheets about Claude spread fast and age faster. The ones behind this site recommended models that have since been replaced, listed keyboard shortcuts that no longer work, and mixed one author's preferences in with facts.</p>
+    <p>Here, each claim is stamped with what checking it found, and each lesson links to the official page it was checked against. Your progress is saved only in this browser.</p>
+  </section>
+
+  <footer>
+    <p>Made by <a href="https://inquiredu.org">inquiredu</a>. Built from infographics shared on Reddit; original authors are credited where known. Not affiliated with Anthropic.</p>
+    <p>Spotted something out of date? <a href="https://github.com/inquiredu/claude-code-field-guide/issues">Open an issue</a>. Code under <a href="https://github.com/inquiredu/claude-code-field-guide/blob/main/LICENSE">MIT</a>; written content under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+  </footer>
 </div>
-
-<main class="deck" id="deck">
-  <noscript><p class="empty">This guide needs JavaScript to load the tool list. The raw data is in <a href="data/tools.json">data/tools.json</a>.</p></noscript>
-</main>
-
-<section class="bloopers" aria-labelledby="bl">
-  <h2 id="bl">Cheat sheet bloopers</h2>
-  <ul>
-    <li>16 of the 55 links were dead or wouldn't load. Eight point to the same GitHub account, <code>micholasoxford</code>, which has no such repos. Each now points to the official or best-known working equivalent, with the original shown crossed out on its card.</li>
-    <li>8 entries describe the tool wrong. "Loop" is a screen-recording video editor, not a task runner. "Clawd Cursor" has nothing to do with Cursor. "Superpowers" isn't browser or LinkedIn tooling.</li>
-    <li>The numbering skips #20 and uses #29 twice. Dokploy is filed here as #19.</li>
-    <li>Star counts on the cheat sheet couldn't be confirmed, so they're left off.</li>
-  </ul>
-</section>
-
-<footer>
-  <p>Source: the "Claude Code Resource Bible" image shared in the SATNA_PROJECT community on Reddit. Summaries are written from each project's own page or README. Stamps reflect a check on October 13, 2026; projects in this space change fast.</p>
-  <p>Spotted a stale link? <a href="https://github.com/inquiredu/claude-code-field-guide/issues">Open an issue</a>. Stars are saved only in your browser.</p>
-  <p>Links are re-checked automatically every month. Code under <a href="https://github.com/inquiredu/claude-code-field-guide/blob/main/LICENSE">MIT</a>; summaries under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
-</footer>
-</div>
-<script src="assets/app.js"></script>
+<script src="assets/core.js"></script>
+<script>
+  CFG.json("data/lessons.json").then(d => {
+    const cards = document.querySelectorAll("#path-cards .path");
+    let anyDone = false;
+    d.paths.forEach((p, i) => {
+      const ls = d.lessons.filter(l => l.path === p.id);
+      const done = ls.filter(l => CFG.lesson(l.id).done).length;
+      if (done) anyDone = true;
+      const el = cards[i]; if (!el) return;
+      el.href = "learn.html#" + (ls.find(l => !CFG.lesson(l.id).done) || ls[0]).id;
+      el.insertAdjacentHTML("beforeend", `<div class="meter-label">${done} of ${ls.length} lessons · about ${ls.reduce((a, l) => a + l.minutes, 0)} min</div><div class="meter" aria-hidden="true"><i style="width:${ls.length ? done / ls.length * 100 : 0}%"></i></div>`);
+    });
+    if (anyDone) document.getElementById("cta").textContent = "Pick up where you left off";
+  }).catch(() => {});
+</script>
 </body>
 </html>

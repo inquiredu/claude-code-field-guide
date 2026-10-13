@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sheet Check · Claude Field Guide</title>
+<meta name="description" content="Claims from viral Claude cheat sheets, each stamped current, outdated, wrong, opinion, or unverified, with the official source.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#claims">Skip to the claims</a>
+<nav class="topnav" aria-label="Site"><div class="in">
+  <a class="brand" href="./"><img src="assets/favicon.svg" alt="">Claude Field Guide</a>
+  <div class="links"><a href="learn.html">Learn</a><a href="glossary.html">Glossary</a><a href="commands.html">Commands</a><a href="tools.html">Tools</a><a href="check.html" aria-current="page">Sheet check</a></div>
+</div></nav>
+<div class="wrap">
+  <header class="page-head">
+    <div class="eyebrow" id="keyebrow">Sheet check</div>
+    <h1>What the cheat sheets <span style="color:var(--accent)">got right</span></h1>
+    <p class="lede">Claims from widely shared Claude infographics, each checked against Anthropic's help center and documentation. Some are still true, some were true when the sheet was made, and some are one person's opinion presented as fact.</p>
+    <div class="tally" id="kstamps" role="group" aria-label="Filter by verdict"></div>
+  </header>
+  <div class="controls">
+    <div class="row">
+      <label class="sr" for="kq">Search claims</label>
+      <input id="kq" type="search" placeholder="Search: model, connectors, Excel, price…" autocomplete="off">
+      <button class="btn" id="guess" type="button" aria-pressed="false">Guess first</button>
+    </div>
+    <div class="chips" id="ktopics" role="group" aria-label="Filter by topic"></div>
+    <div class="count" id="kcount" aria-live="polite"></div>
+  </div>
+  <main id="claims"></main>
+  <footer id="ksrc"></footer>
+</div>
+<script src="assets/core.js"></script>
+<script src="assets/check.js"></script>
+</body>
+</html>

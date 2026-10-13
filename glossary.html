@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Glossary · Claude Field Guide</title>
+<meta name="description" content="Plain-language AI terms, with corrections where popular cheat sheets overstate things, plus flashcards to practice.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#terms">Skip to the terms</a>
+<nav class="topnav" aria-label="Site"><div class="in">
+  <a class="brand" href="./"><img src="assets/favicon.svg" alt="">Claude Field Guide</a>
+  <div class="links"><a href="learn.html">Learn</a><a href="glossary.html" aria-current="page">Glossary</a><a href="commands.html">Commands</a><a href="tools.html">Tools</a><a href="check.html">Sheet check</a></div>
+</div></nav>
+<div class="wrap">
+  <header class="page-head">
+    <div class="eyebrow">32 terms · plain language</div>
+    <h1>AI words, <span style="color:var(--accent)">without the hype</span></h1>
+    <p class="lede">Every term from the popular "20 Basic But Important AI Terms" list, plus the words Claude cheat sheets use without explaining. Where the original overstated something, the card says what changed and why.</p>
+    <div class="tally" id="stamps" role="group" aria-label="Filter by stamp"></div>
+  </header>
+  <div class="controls">
+    <div class="row">
+      <label class="sr" for="gq">Search terms</label>
+      <input id="gq" type="search" placeholder="Search: token, agent, hallucination…" autocomplete="off">
+      <button class="btn" id="mode" type="button" aria-pressed="false">Practice with flashcards</button>
+    </div>
+    <div class="chips" id="groups" role="group" aria-label="Filter by topic"></div>
+    <div class="count" id="gcount" aria-live="polite"></div>
+  </div>
+  <main id="terms"></main>
+</div>
+<script src="assets/core.js"></script>
+<script src="assets/glossary.js"></script>
+</body>
+</html>
