@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Claude Code Field Guide</title>
+<meta name="description" content="54 Claude Code tools, skills, and MCP servers from a popular cheat sheet, each link checked, broken ones fixed, and every entry explained in plain language.">
+<meta property="og:title" content="Claude Code Field Guide">
+<meta property="og:description" content="Every tool from the viral Claude Code cheat sheet, checked link by link and explained in plain language.">
+<meta property="og:type" content="website">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#deck">Skip to the tools</a>
+<div class="wrap">
+<header>
+  <div class="eyebrow" id="eyebrow">Field guide · links checked October 13, 2026</div>
+  <h1>Claude Code <span>Field Guide</span></h1>
+  <p class="lede">Every entry from the "Claude Code Resource Bible" cheat sheet, inspected one by one. Each card is stamped with what we found: the link works as described, the link was broken and is now fixed, or the cheat sheet described the tool wrong. Star the ones you want in your stack.</p>
+  <div class="tally" id="tally" role="group" aria-label="Filter by inspection stamp"></div>
+</header>
+
+<div class="controls">
+  <div class="row">
+    <label class="sr" for="q">Search the guide</label>
+    <input id="q" type="search" placeholder="Search: browser, worktree, Figma, deploy…" autocomplete="off">
+    <button class="btn" id="draw" type="button">Draw a card</button>
+    <button class="btn ghost" id="mine" type="button" aria-pressed="false">★ My stack <span id="mineN">0</span></button>
+  </div>
+  <div class="chips" id="cats" role="group" aria-label="Filter by category"></div>
+  <div class="count" id="count" aria-live="polite"></div>
+</div>
+
+<main class="deck" id="deck">
+  <noscript><p class="empty">This guide needs JavaScript to load the tool list. The raw data is in <a href="data/tools.json">data/tools.json</a>.</p></noscript>
+</main>
+
+<section class="bloopers" aria-labelledby="bl">
+  <h2 id="bl">Cheat sheet bloopers</h2>
+  <ul>
+    <li>16 of the 55 links were dead or wouldn't load. Eight point to the same GitHub account, <code>micholasoxford</code>, which has no such repos. Each now points to the official or best-known working equivalent, with the original shown crossed out on its card.</li>
+    <li>8 entries describe the tool wrong. "Loop" is a screen-recording video editor, not a task runner. "Clawd Cursor" has nothing to do with Cursor. "Superpowers" isn't browser or LinkedIn tooling.</li>
+    <li>The numbering skips #20 and uses #29 twice. Dokploy is filed here as #19.</li>
+    <li>Star counts on the cheat sheet couldn't be confirmed, so they're left off.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Source: the "Claude Code Resource Bible" image shared in the SATNA_PROJECT community on Reddit. Summaries are written from each project's own page or README. Stamps reflect a check on October 13, 2026; projects in this space change fast.</p>
+  <p>Spotted a stale link? <a href="https://github.com/inquiredu/claude-code-field-guide/issues">Open an issue</a>. Stars are saved only in your browser.</p>
+</footer>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

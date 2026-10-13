@@ -1,0 +1,530 @@
+{
+  "verified": "2026-10-13",
+  "source": "\"Claude Code Resource Bible\" poster shared in the SATNA_PROJECT community on Reddit",
+  "tools": [
+    {
+      "number": 0,
+      "category": "Start Here",
+      "name": "Beginner → Advanced Guide",
+      "status": "ok",
+      "summary": "A three-part newsletter issue that takes non-developers from installing Claude Code and setting up project context, through running workflows with parallel agents, to using it to run a business.",
+      "poster_blurb": "Beginner → Advanced Guide",
+      "url": "https://charliehills.substack.com/p/claude-code-beginner-advanced"
+    },
+    {
+      "number": 1,
+      "category": "Official Anthropic",
+      "name": "Official Docs",
+      "status": "ok",
+      "summary": "Anthropic's documentation for Claude Code: install, quickstart, CLAUDE.md memory, skills, hooks, MCP, subagents, scheduled tasks, and every surface (terminal, IDE, desktop, web).",
+      "poster_blurb": "Complete CC documentation",
+      "url": "https://code.claude.com/docs"
+    },
+    {
+      "number": 2,
+      "category": "Official Anthropic",
+      "name": "Partner Network",
+      "status": "ok",
+      "summary": "Anthropic's March 2026 announcement of the Claude Partner Network, a program for firms that help enterprises adopt Claude, backed by $100M for training, support, and joint marketing.",
+      "poster_blurb": "Anthropic partners",
+      "note": "Aimed at consultancies and integrators, not individual users.",
+      "url": "https://anthropic.com/news/claude-partner-network"
+    },
+    {
+      "number": 3,
+      "category": "Official Anthropic",
+      "name": "Certification",
+      "status": "fixed",
+      "summary": "Access request for the Claude Certified Architect – Foundations exam. It lives in the Partner Network's learning portal.",
+      "poster_blurb": "Claude Certified Architect",
+      "url": "https://anthropic-partners.skilljar.com/claude-certified-architect-foundations-access-request",
+      "original_url": "https://anthropic.skilljar.com/claude-certified-architect-foundation-access-request"
+    },
+    {
+      "number": 4,
+      "category": "Official Anthropic",
+      "name": "MCP Servers Repo",
+      "status": "heads",
+      "summary": "The MCP steering group's reference servers, meant to demonstrate the protocol and SDKs.",
+      "poster_blurb": "Official MCP servers",
+      "note": "These are reference examples, not production servers. For a full catalog, the repo points to the MCP Registry at registry.modelcontextprotocol.io.",
+      "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    {
+      "number": 5,
+      "category": "Directories + Mega Lists",
+      "name": "Everything Claude Code",
+      "status": "relabel",
+      "summary": "Home page for ECC, an open-source toolkit of skills, hooks, planning tools, shared memory, and a security scanner (AgentShield) for Claude Code and Codex, with an optional paid GitHub App.",
+      "poster_blurb": "Curated tool directory",
+      "note": "Same project as #6. It's a toolkit you install, not a directory of other tools.",
+      "url": "https://ecc.tools"
+    },
+    {
+      "number": 6,
+      "category": "Directories + Mega Lists",
+      "name": "Mega Resource Repo",
+      "status": "relabel",
+      "summary": "The GitHub repo behind ECC (#5): skills, hooks, and agent tooling in 16 languages.",
+      "poster_blurb": "GitHub mega collection",
+      "note": "The README asks you to install only from github.com/affaan-m/ECC, the npm packages ecc-universal and ecc-agentshield, or ecc.tools.",
+      "url": "https://github.com/affaan-m/everything-claude-code"
+    },
+    {
+      "number": 7,
+      "category": "Directories + Mega Lists",
+      "name": "Awesome MCP Servers",
+      "status": "ok",
+      "summary": "A long, community-curated list of MCP servers sorted by category, plus clients, tutorials, and frameworks.",
+      "poster_blurb": "2K+ stars",
+      "url": "https://github.com/punkpeye/awesome-mcp-servers"
+    },
+    {
+      "number": 8,
+      "category": "Directories + Mega Lists",
+      "name": "Awesome Claude Skills",
+      "status": "fixed",
+      "summary": "A curated list of Claude Skills. The cheat sheet misspelled the account name.",
+      "poster_blurb": "Skills list",
+      "url": "https://github.com/BehiSecc/awesome-claude-skills",
+      "original_url": "https://github.com/Beh1Secc/awesome-claude-skills"
+    },
+    {
+      "number": 9,
+      "category": "Directories + Mega Lists",
+      "name": "Skill Codex",
+      "status": "relabel",
+      "summary": "A Claude Code plugin that lets Claude hand work to OpenAI's Codex CLI (codex exec) for analysis, refactoring, and edits.",
+      "poster_blurb": "Community directory",
+      "note": "Needs the Codex CLI installed and signed in.",
+      "url": "https://github.com/skills-directory/skill-codex"
+    },
+    {
+      "number": 10,
+      "category": "Directories + Mega Lists",
+      "name": "Visual Skills Browser",
+      "status": "relabel",
+      "summary": "An install page for cmux skills: copy one prompt, paste it into Claude Code, and it writes a skill for managing several agents from one terminal.",
+      "poster_blurb": "Browse skills visually",
+      "url": "https://cmux-artemzhutov.netlify.app/skills.html"
+    },
+    {
+      "number": 11,
+      "category": "Directories + Mega Lists",
+      "name": "50+ Best MCP Addons",
+      "status": "ok",
+      "summary": "A categorized directory of 50+ MCP servers and Claude Code extensions: IDE integrations, usage monitors, orchestrators, and more.",
+      "poster_blurb": "Curated MCP list",
+      "url": "https://claudefa.st/blog/tools/mcp-extensions/best-addons"
+    },
+    {
+      "number": 12,
+      "category": "Directories + Mega Lists",
+      "name": "MCP Server Guide",
+      "status": "fixed",
+      "summary": "AgentCat's (formerly MCPcat) guide to MCP servers for Claude Code, grouped by use with install commands for each.",
+      "poster_blurb": "Best servers for CC",
+      "url": "https://agentcat.com/guides/best-mcp-servers-for-claude-code/",
+      "original_url": "https://mcp.cat.io/guides/best-mcp-servers-for-claude-code"
+    },
+    {
+      "number": 13,
+      "category": "MCP Servers",
+      "name": "Playwright",
+      "status": "fixed",
+      "summary": "Microsoft's official Playwright MCP server. Lets Claude drive a browser through accessibility snapshots instead of screenshots.",
+      "poster_blurb": "Browser automation (official)",
+      "note": "It's Microsoft's, not Anthropic's. The README suggests coding agents try Playwright CLI + skills, which uses fewer tokens.",
+      "url": "https://github.com/microsoft/playwright-mcp",
+      "original_url": "https://github.com/anthropics/mcp-server-playwright"
+    },
+    {
+      "number": 14,
+      "category": "MCP Servers",
+      "name": "Firecrawl",
+      "status": "fixed",
+      "summary": "Firecrawl's official MCP server: web search, scraping any URL into clean data, and an index of GitHub issues, PRs, and docs.",
+      "poster_blurb": "Web scraping + search",
+      "url": "https://github.com/firecrawl/firecrawl-mcp-server",
+      "original_url": "https://github.com/micholasoxford/firecrawl-mcp"
+    },
+    {
+      "number": 15,
+      "category": "MCP Servers",
+      "name": "Supabase",
+      "status": "ok",
+      "summary": "Connects Claude to your Supabase projects to manage tables, fetch config, and query data.",
+      "poster_blurb": "DB + auth + edge functions",
+      "note": "Supabase asks you to read its MCP security best practices before connecting.",
+      "url": "https://github.com/supabase-community/supabase-mcp"
+    },
+    {
+      "number": 16,
+      "category": "MCP Servers",
+      "name": "PostgreSQL",
+      "status": "fixed",
+      "summary": "Postgres MCP Pro: index tuning, explain plans, database health checks, and safe SQL execution.",
+      "poster_blurb": "Database",
+      "note": "The cheat sheet's repo doesn't exist. This is a well-known working replacement, not necessarily what the cheat sheet meant.",
+      "url": "https://github.com/crystaldba/postgres-mcp",
+      "original_url": "https://github.com/micholasoxford/postgres-mcp"
+    },
+    {
+      "number": 17,
+      "category": "MCP Servers",
+      "name": "GitHub",
+      "status": "fixed",
+      "summary": "GitHub's official MCP server: browse code, manage issues and PRs, and monitor Actions runs.",
+      "poster_blurb": "PRs, issues, repos",
+      "url": "https://github.com/github/github-mcp-server",
+      "original_url": "https://github.com/micholasoxford/github-mcp"
+    },
+    {
+      "number": 18,
+      "category": "MCP Servers",
+      "name": "Sentry",
+      "status": "fixed",
+      "summary": "Sentry's official remote MCP server, tuned for debugging with coding agents. Same repo holds the Sentry CLI.",
+      "poster_blurb": "Error monitoring",
+      "url": "https://github.com/getsentry/sentry-mcp",
+      "original_url": "https://github.com/micholasoxford/sentry-mcp"
+    },
+    {
+      "number": 19,
+      "category": "MCP Servers",
+      "name": "Dokploy",
+      "status": "ok",
+      "summary": "Exposes the whole Dokploy deployment API (500+ tools) to MCP clients. Requires your own Dokploy server.",
+      "poster_blurb": "Deployment (numbered #29 on the cheat sheet)",
+      "url": "https://github.com/Dokploy/mcp"
+    },
+    {
+      "number": 21,
+      "category": "MCP Servers",
+      "name": "Slack",
+      "status": "fixed",
+      "summary": "A popular community Slack MCP server: channels, DMs, and history search over stdio, SSE, or HTTP.",
+      "poster_blurb": "Messaging",
+      "note": "Community-built, not from Slack. It advertises a no-permissions 'stealth mode'; check with your workspace admin before using it on a work Slack.",
+      "url": "https://github.com/korotovsky/slack-mcp-server",
+      "original_url": "https://github.com/micholasoxford/slack-mcp"
+    },
+    {
+      "number": 22,
+      "category": "MCP Servers",
+      "name": "Notion",
+      "status": "fixed",
+      "summary": "Notion's self-hosted MCP server.",
+      "poster_blurb": "Knowledge base",
+      "note": "Notion says this repo is no longer maintained and recommends its hosted Remote Notion MCP (developers.notion.com/docs/mcp) instead.",
+      "url": "https://github.com/makenotion/notion-mcp-server",
+      "original_url": "https://github.com/micholasoxford/notion-mcp"
+    },
+    {
+      "number": 23,
+      "category": "MCP Servers",
+      "name": "Figma",
+      "status": "fixed",
+      "summary": "Framelink MCP for Figma: paste a Figma link and the agent reads real design data to build the UI.",
+      "poster_blurb": "Design access",
+      "note": "Community-built replacement for the dead link.",
+      "url": "https://github.com/GLips/Figma-Context-MCP",
+      "original_url": "https://github.com/micholasoxford/figma-mcp"
+    },
+    {
+      "number": 24,
+      "category": "MCP Servers",
+      "name": "Linear",
+      "status": "fixed",
+      "summary": "A community Linear MCP server for reading and updating issues.",
+      "poster_blurb": "Project management",
+      "note": "Its author deprecated it in favor of Linear's official remote MCP server (mcp.linear.app). Use that.",
+      "url": "https://github.com/jerhadf/linear-mcp-server",
+      "original_url": "https://github.com/micholasoxford/linear-mcp"
+    },
+    {
+      "number": 25,
+      "category": "Articles + Blogs",
+      "name": "10 CLI Tools for AI Coding",
+      "status": "ok",
+      "summary": "Terminal tools that pair well with coding agents: LazyGit, Glow, LLM Fit, Models CLI, Taproom, Ranger, Zoxide, Btop, Chafa, CSV Lens, plus eza.",
+      "poster_blurb": "Starmorph",
+      "url": "https://blog.starmorph.com/blog/10-cli-tools-for-ai-coding"
+    },
+    {
+      "number": 26,
+      "category": "Articles + Blogs",
+      "name": "Best MCP Servers for Devs",
+      "status": "ok",
+      "summary": "An intro to MCP plus a ranked list of ten developer MCP servers and eight honorable mentions.",
+      "poster_blurb": "Firecrawl",
+      "note": "Written by Firecrawl, which ranks its own server first.",
+      "url": "https://firecrawl.dev/blog/best-mcp-servers-for-developers"
+    },
+    {
+      "number": 27,
+      "category": "Articles + Blogs",
+      "name": "MCP Config Guide",
+      "status": "ok",
+      "summary": "Builder.io's guide to adding MCP servers to Claude Code: config scopes, useful servers, Tool Search for saving context, and fixing connection problems.",
+      "poster_blurb": "Step-by-step setup",
+      "url": "https://builder.io/blog/claude-code-mcp-servers"
+    },
+    {
+      "number": 28,
+      "category": "Articles + Blogs",
+      "name": "Agentmaxxing",
+      "status": "unk",
+      "summary": "A guide to running Claude Code, Codex, and Gemini CLI in parallel: terminal setups, git worktrees, workflow, and practical limits.",
+      "poster_blurb": "Parallel agents",
+      "note": "The cheat sheet's link wouldn't load and couldn't be found. This March 2026 article by the same name is the closest match.",
+      "url": "https://vibecoding.app/blog/agentmaxxing",
+      "original_url": "https://substack.com/@blog/agentmaxxing"
+    },
+    {
+      "number": 29,
+      "category": "Skills + Extensions",
+      "name": "Superpowers",
+      "status": "fixed",
+      "summary": "A full software-development method for coding agents, built from composable skills: brainstorm, plan, test-first build, and review.",
+      "poster_blurb": "Browser + LinkedIn tools",
+      "note": "Wrong account name and wrong description on the cheat sheet. Works with Claude Code, Codex, Cursor, Gemini CLI, and others.",
+      "url": "https://github.com/obra/superpowers",
+      "original_url": "https://github.com/ohra/superpowers"
+    },
+    {
+      "number": 30,
+      "category": "Skills + Extensions",
+      "name": "Taste Skill",
+      "status": "ok",
+      "summary": "Portable agent skills that push AI-built interfaces past generic defaults with stronger layout and design judgment.",
+      "poster_blurb": "Anti-slop frontend",
+      "url": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+      "number": 31,
+      "category": "Skills + Extensions",
+      "name": "Chrome CDP",
+      "status": "ok",
+      "summary": "Lets your agent see and act in the Chrome you already have open, including tabs where you're signed in.",
+      "poster_blurb": "Control Chrome tabs",
+      "note": "Because it uses your real logins, the agent can reach your email and accounts. Use it deliberately.",
+      "url": "https://github.com/pasky/chrome-cdp-skill"
+    },
+    {
+      "number": 32,
+      "category": "Skills + Extensions",
+      "name": "Delivery Lifecycle",
+      "status": "ok",
+      "summary": "Plugin skills for Claude Code and Codex covering idea vetting, fixes, architecture review, and deploys, each with a defined check and evidence report.",
+      "poster_blurb": "Full workflow skills",
+      "url": "https://github.com/levnikolaevich/claude-code-skills"
+    },
+    {
+      "number": 33,
+      "category": "Skills + Extensions",
+      "name": "Codex Settings",
+      "status": "ok",
+      "summary": "A ready-made setup for Claude Code, Claude Desktop, Codex, and Cursor: skills, commands, hooks, subagents, and MCP servers.",
+      "poster_blurb": "Optimised configs",
+      "url": "https://github.com/fcakyon/claude-codex-settings"
+    },
+    {
+      "number": 34,
+      "category": "Skills + Extensions",
+      "name": "CLUI",
+      "status": "ok",
+      "summary": "A floating macOS overlay for Claude Code with multi-tab sessions, a permission approval panel, voice input, and a skills marketplace.",
+      "poster_blurb": "Visual interface for CC",
+      "url": "https://github.com/lcoutodemos/clui-cc"
+    },
+    {
+      "number": 35,
+      "category": "Skills + Extensions",
+      "name": "Loop",
+      "status": "relabel",
+      "summary": "A desktop app for recording screen videos, transcribing as you talk, and cutting dead air from the transcript into a finished MP4.",
+      "poster_blurb": "Recurring task runner",
+      "note": "Not a task runner. For recurring prompts, Claude Code has a built-in /loop command and scheduled tasks (see #1).",
+      "url": "https://github.com/tadaspetra/loop"
+    },
+    {
+      "number": 36,
+      "category": "Skills + Extensions",
+      "name": "Clawd Cursor",
+      "status": "relabel",
+      "summary": "A desktop-control engine for AI agents: maps the screen into UI elements, acts on them, verifies each action, and routes everything through one safety checkpoint.",
+      "poster_blurb": "Claude + Cursor",
+      "note": "Unrelated to the Cursor editor.",
+      "url": "https://github.com/AmrDab/clawd-cursor"
+    },
+    {
+      "number": 37,
+      "category": "Terminal Multiplexers",
+      "name": "cmux",
+      "status": "ok",
+      "summary": "A free, open-source native macOS terminal built on Ghostty, with vertical tabs and alerts when an agent needs you.",
+      "poster_blurb": "macOS agent terminal (7.7K stars)",
+      "url": "https://cmux.com"
+    },
+    {
+      "number": 38,
+      "category": "Terminal Multiplexers",
+      "name": "gmux",
+      "status": "ok",
+      "summary": "A Ghostty + tmux setup for running Claude Code, Codex, and opencode side by side, configured with dotfiles instead of a new app.",
+      "poster_blurb": "Multi-agent orchestration",
+      "url": "https://gmux.sh"
+    },
+    {
+      "number": 39,
+      "category": "Terminal Multiplexers",
+      "name": "claude-squad",
+      "status": "ok",
+      "summary": "A terminal app that runs several agents (Claude Code, Codex, Gemini, Aider) at once, each in its own git workspace, with review before you apply changes.",
+      "poster_blurb": "Manage multiple agents",
+      "url": "https://github.com/smtg-ai/claude-squad"
+    },
+    {
+      "number": 40,
+      "category": "Terminal Multiplexers",
+      "name": "dmux",
+      "status": "ok",
+      "summary": "Runs parallel coding agents in tmux panes, each on its own git worktree, then merges the branches back.",
+      "poster_blurb": "Git worktree multiplexer",
+      "url": "https://github.com/standardagents/dmux"
+    },
+    {
+      "number": 41,
+      "category": "Terminal Multiplexers",
+      "name": "mux",
+      "status": "heads",
+      "summary": "Coder's coding-agent multiplexer: isolated workspaces (local, worktree, or SSH) with one view of how each has diverged.",
+      "poster_blurb": "Isolated parallel dev",
+      "note": "Renamed to Xum after a trademark concern.",
+      "url": "https://github.com/coder/mux"
+    },
+    {
+      "number": 42,
+      "category": "Agent Frameworks",
+      "name": "ClawTeam",
+      "status": "ok",
+      "summary": "Give one goal and agents form a team: spawn helpers, delegate, and deliver. Works with Claude Code, Codex, Cursor, and other CLI agents.",
+      "poster_blurb": "Multi-agent coordination",
+      "url": "https://github.com/HKUDS/ClawTeam"
+    },
+    {
+      "number": 43,
+      "category": "Agent Frameworks",
+      "name": "CLI-Anything",
+      "status": "ok",
+      "summary": "Generates command-line interfaces for existing software so agents can operate it, with a community hub of ready-made CLIs.",
+      "poster_blurb": "Turn any tool into CLI",
+      "url": "https://github.com/HKUDS/CLI-Anything"
+    },
+    {
+      "number": 44,
+      "category": "Agent Frameworks",
+      "name": "Collaborator AI",
+      "status": "ok",
+      "summary": "A desktop app that lays out terminals, context files, and running code on one infinite canvas for working with agents.",
+      "poster_blurb": "Multi-agent collab",
+      "note": "Early-stage and changing quickly.",
+      "url": "https://github.com/collaborator-ai/collab-public"
+    },
+    {
+      "number": 45,
+      "category": "Agent Frameworks",
+      "name": "Autoresearch",
+      "status": "fixed",
+      "summary": "Turns Claude Code, OpenCode, or Codex into an improvement loop: set a goal and a metric, and the agent iterates until it gets there. Based on Karpathy's autoresearch.",
+      "poster_blurb": "Automated research loops",
+      "url": "https://github.com/uditgoenka/autoresearch",
+      "original_url": "https://github.com/udtiaoenka/autoresearch"
+    },
+    {
+      "number": 46,
+      "category": "Agent Frameworks",
+      "name": "ACE Platform",
+      "status": "relabel",
+      "summary": "Open-source platform that turns one-off prompts into playbooks that improve after each task, connected to Claude Code and Codex over MCP.",
+      "poster_blurb": "Agent control env",
+      "url": "https://github.com/DannyMac180/ace-platform"
+    },
+    {
+      "number": 47,
+      "category": "Agent Frameworks",
+      "name": "Hermes Agent",
+      "status": "ok",
+      "summary": "Nous Research's self-improving agent: it writes skills from experience, searches its own past conversations, and runs on a VPS or serverless.",
+      "poster_blurb": "NousResearch",
+      "url": "https://github.com/NousResearch/hermes-agent"
+    },
+    {
+      "number": 48,
+      "category": "Agent Frameworks",
+      "name": "CopilotKit",
+      "status": "ok",
+      "summary": "Toolkit for putting agents inside your own app: generative UI, shared state, and human-in-the-loop for React, Angular, Vue, Slack, and Teams.",
+      "poster_blurb": "Embed copilots in apps",
+      "url": "https://github.com/CopilotKit/CopilotKit"
+    },
+    {
+      "number": 49,
+      "category": "Automation + Infra",
+      "name": "n8n-as-code",
+      "status": "ok",
+      "summary": "Build, edit, deploy, and debug n8n workflows from VS Code or Cursor with an agent that sees your live n8n setup.",
+      "poster_blurb": "n8n workflows as code",
+      "url": "https://github.com/EtienneLescot/n8n-as-code"
+    },
+    {
+      "number": 50,
+      "category": "Automation + Infra",
+      "name": "Office Agents",
+      "status": "fixed",
+      "summary": "Microsoft Office add-ins with an AI chat panel that can read and write your Word and Excel files, using your own API key.",
+      "poster_blurb": "Word + Excel automation",
+      "url": "https://github.com/hewliyang/office-agents",
+      "original_url": "https://github.com/newl1yang/office-agents"
+    },
+    {
+      "number": 51,
+      "category": "Automation + Infra",
+      "name": "Cloak Browser",
+      "status": "heads",
+      "summary": "A modified Chromium built to pass bot detection, usable as a drop-in Playwright or Puppeteer replacement.",
+      "poster_blurb": "Stealth browser for agents",
+      "note": "Its purpose is getting past anti-bot checks. Check a site's terms before pointing it there.",
+      "url": "https://github.com/CloakHQ/CloakBrowser"
+    },
+    {
+      "number": 52,
+      "category": "Automation + Infra",
+      "name": "OpenLogs",
+      "status": "ok",
+      "summary": "Collects raw events from your apps, APIs, workers, and infrastructure so coding agents can read real logs when diagnosing failures.",
+      "poster_blurb": "AI agent observability",
+      "url": "https://openlogs.dev"
+    },
+    {
+      "number": 53,
+      "category": "Automation + Infra",
+      "name": "Vercel Chat SDK",
+      "status": "ok",
+      "summary": "Vercel's open-source toolkit for running one bot codebase across many chat platforms (March 2026 announcement).",
+      "poster_blurb": "Agents for your users",
+      "url": "https://vercel.com/blog/chat-sdk-brings-agents-to-your-users"
+    },
+    {
+      "number": 54,
+      "category": "Automation + Infra",
+      "name": "Self-Hosted Infra",
+      "status": "heads",
+      "summary": "How to run your own Happy relay server, the piece that carries encrypted sessions between your computer and the Happy mobile app for Claude Code.",
+      "poster_blurb": "Happy Engineering guide",
+      "note": "These docs cover the original Happy CLI, now in maintenance mode; the newer Happy desktop app gets the new features.",
+      "url": "https://happy.engineering/docs/guides/self-hosting"
+    }
+  ]
+}
