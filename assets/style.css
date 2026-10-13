@@ -135,7 +135,7 @@ footer p{margin:0 0 6px}
 .lesson .idea p{margin:0 0 12px;max-width:68ch}
 .block{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--paper);display:grid;gap:12px}
 .block h2{font:800 20px var(--f-display);margin:0;display:flex;gap:10px;align-items:center}
-.block h2 .tag{font:600 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--accent);color:var(--accent-ink)}
+.block h2 .tag{white-space:nowrap;flex:none;font:600 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--accent);color:var(--accent-ink)}
 .block.try{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .prompt-box{position:relative;background:var(--bg);border-radius:10px;padding:14px 14px 48px;font:14px/1.55 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere}
 .prompt-box button{position:absolute;right:10px;bottom:10px}
@@ -194,3 +194,9 @@ table.cmds code{font:500 13px var(--f-mono);white-space:nowrap}
 table.cmds .grp td{background:var(--bg);font:800 15px var(--f-display);padding-top:14px}
 .legend{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted);align-items:center}
 .s-added{color:var(--accent);background:var(--accent-soft)}
+.lesson-menu summary{cursor:pointer;font:600 15px var(--f-body);padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);display:flex;justify-content:space-between;gap:8px;list-style:none}
+.lesson-menu summary::-webkit-details-marker{display:none}
+.lesson-menu summary::after{content:"▾";color:var(--muted)}
+.lesson-menu[open] summary::after{content:"▴"}
+.lesson-menu-body{display:grid;gap:18px;padding-top:14px}
+@media (min-width:821px){.lesson-menu summary{display:none}.lesson-menu-body{padding-top:0}}

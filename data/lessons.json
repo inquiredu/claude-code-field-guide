@@ -1,0 +1,851 @@
+{
+ "checked_on": "2026-10-13",
+ "paths": [
+  {
+   "id": "start",
+   "title": "Start here"
+  },
+  {
+   "id": "everyday",
+   "title": "Make it yours"
+  },
+  {
+   "id": "code",
+   "title": "Build with Claude Code"
+  }
+ ],
+ "lessons": [
+  {
+   "id": "what-claude-is",
+   "path": "start",
+   "title": "What Claude is, and isn't",
+   "minutes": 6,
+   "why": "Knowing how Claude produces an answer tells you when to lean on it and when to double-check.",
+   "idea": [
+    "Claude is a large language model. It writes by predicting what text should come next, one small piece at a time, based on everything in the conversation so far. Trained at huge scale, that simple process makes it very good at drafting, explaining, summarizing, and working through problems.",
+    "The same process explains its limits. It can say something false in a confident voice, a failure called hallucination. Without web search, it doesn't know about events after its training cutoff. And it only knows what you've told it about your situation.",
+    "So treat Claude like a fast, well-read collaborator who has never met you: give it context, and check the parts that matter."
+   ],
+   "try": {
+    "intro": "Test Claude on a subject you already know well, so you can judge the answer yourself.",
+    "prompt": "Explain [a topic you know well, like your job, a hobby, or your hometown] to a curious 12-year-old in under 150 words. Then list two things people commonly get wrong about it.",
+    "steps": [
+     "Open Claude and start a new chat.",
+     "Paste the prompt and replace the bracketed part.",
+     "Read the answer as the expert you are."
+    ]
+   },
+   "check": [
+    "I found at least one thing it got right that I'd want a beginner to know.",
+    "I looked for anything oversimplified or wrong, and noted it.",
+    "I can explain in one sentence why Claude can sound sure and still be wrong."
+   ],
+   "quiz": [
+    {
+     "q": "How does Claude produce an answer?",
+     "options": [
+      "It looks up a stored answer in a database",
+      "It predicts likely text, piece by piece, from the conversation so far",
+      "It copies the most popular web page on the topic",
+      "A person reviews and writes each reply"
+     ],
+     "answer": 1,
+     "explain": "Language models generate text by predicting what comes next. That's why answers are fluent, and also why they can be fluently wrong."
+    },
+    {
+     "q": "You ask about something that happened yesterday, and web search is off. What should you expect?",
+     "options": [
+      "A reliable, detailed answer",
+      "Claude may not know, or may guess",
+      "Claude will refuse to talk about news",
+      "An error message"
+     ],
+     "answer": 1,
+     "explain": "Without search, Claude only knows what was in its training data, which stops at its knowledge cutoff."
+    }
+   ],
+   "terms": [
+    "Large language model (LLM)",
+    "Hallucination",
+    "Knowledge cutoff"
+   ]
+  },
+  {
+   "id": "say-what-good-looks-like",
+   "path": "start",
+   "title": "Say what good looks like",
+   "minutes": 8,
+   "why": "Most disappointing answers come from prompts that leave Claude guessing about the goal, the reader, or the finish line.",
+   "idea": [
+    "A strong prompt answers four questions: What do you want? Who is it for? What does Claude need to know? What does a good result look like? You don't need special phrasing. Write it the way you'd brief a capable new colleague.",
+    "The last question matters most and gets skipped most. \"Write an email to parents\" leaves everything open. \"Write a 120-word email to parents about Friday's early release; warm, plain language, one clear action at the end\" tells Claude exactly when it's done.",
+    "Several popular cheat sheets boil this down to one line: I want to [task] so that [success criteria]. It's a handy starting shape, not a magic formula."
+   ],
+   "try": {
+    "intro": "Take a vague request and make it specific, then compare the results.",
+    "prompt": "Version 1: Write a thank-you note to a coworker.\n\nVersion 2: Write a thank-you note to my coworker [name], who [what they did]. It's for a card, so keep it under 60 words. Warm but not gushing, and mention one specific way it helped.",
+    "steps": [
+     "Send Version 1 in one chat.",
+     "Send Version 2, filled in, in a new chat.",
+     "Put the two answers side by side."
+    ]
+   },
+   "check": [
+    "Version 2 needed fewer edits before I'd actually use it.",
+    "I can name which detail made the biggest difference.",
+    "I wrote down one success criterion I'll reuse in future prompts."
+   ],
+   "quiz": [
+    {
+     "q": "Which detail most often turns a vague prompt into a useful one?",
+     "options": [
+      "Saying please",
+      "Using technical keywords",
+      "Describing what a good result looks like",
+      "Writing in all caps"
+     ],
+     "answer": 2,
+     "explain": "Success criteria, like length, audience, tone, and what must be included, tell Claude what finished means."
+    },
+    {
+     "q": "What's the best mental model for writing a prompt?",
+     "options": [
+      "A search engine query",
+      "Briefing a capable new colleague",
+      "A secret code",
+      "A one-word command"
+     ],
+     "answer": 1,
+     "explain": "A new colleague is smart but lacks your context. Give them the goal, the audience, and the finish line."
+    }
+   ],
+   "credit": {
+    "text": "The one-line \"I want to [task] so that [success criteria]\" shape appears in Ruben Hassid's How to AI infographics."
+   },
+   "sources": [
+    {
+     "title": "Anthropic: Prompt engineering overview",
+     "url": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview"
+    }
+   ],
+   "terms": [
+    "Prompt"
+   ]
+  },
+  {
+   "id": "let-claude-ask-first",
+   "path": "start",
+   "title": "Let Claude ask first",
+   "minutes": 6,
+   "why": "You don't have to know everything up front. Letting Claude interview you surfaces the details you didn't think to mention.",
+   "idea": [
+    "When a task has a lot of unknowns, add one sentence to your prompt: \"Ask me clarifying questions before you start.\" Claude will stop and ask about audience, scope, tone, or constraints before writing anything.",
+    "This flips the work. Instead of crafting a perfect prompt, you answer a few targeted questions. Depending on where you use Claude, the questions may appear as clickable choices you can tap.",
+    "It's most useful for anything with real stakes: a plan, a policy draft, a hard message. For a quick question, skip it."
+   ],
+   "try": {
+    "intro": "Hand Claude a loose task and let it interview you.",
+    "prompt": "I need to plan [something real you're working on, like a team meeting, a trip, or a class unit]. Ask me clarifying questions until you have enough context, then propose a plan. Ask no more than five questions at a time.",
+    "steps": [
+     "Send the prompt with your real task filled in.",
+     "Answer the questions honestly, including \"I don't know\" where true.",
+     "Read the plan it proposes."
+    ]
+   },
+   "check": [
+    "At least one question raised something I hadn't thought about.",
+    "The plan reflects my answers, not a generic template.",
+    "I know when this technique is worth the extra minute and when it isn't."
+   ],
+   "quiz": [
+    {
+     "q": "When is asking Claude to ask clarifying questions most worth it?",
+     "options": [
+      "Every message, always",
+      "Tasks with many unknowns or real stakes",
+      "Simple factual questions",
+      "Never; it slows things down"
+     ],
+     "answer": 1,
+     "explain": "For quick questions it adds friction. For plans, drafts, and decisions, it catches gaps early."
+    }
+   ],
+   "terms": [
+    "Prompt"
+   ]
+  },
+  {
+   "id": "iterate-dont-restart",
+   "path": "start",
+   "title": "Iterate, don't restart",
+   "minutes": 7,
+   "why": "The first answer is a draft. The real value comes from the second and third rounds.",
+   "idea": [
+    "When an answer is close but not right, don't start over. Tell Claude specifically what to keep and what to change: \"Keep the opening. Cut the third paragraph. Make the ending one sentence.\" Specific feedback beats \"make it better\" every time.",
+    "Ask for options when you're not sure what you want. \"Give me three different openings: one formal, one warm, one blunt\" lets you react instead of describing.",
+    "Do start fresh when a conversation gets very long or wanders off course. Older details can get less attention as a chat grows. Ask Claude to summarize where things stand, then paste that summary into a new chat."
+   ],
+   "try": {
+    "intro": "Take one draft through three rounds of specific feedback.",
+    "prompt": "Write a short bio for me to use when I introduce myself at a [meeting, event, or website]. Here's what to include: [3 to 4 facts about you].",
+    "steps": [
+     "Send the prompt.",
+     "Round 1: ask for three versions in different tones.",
+     "Round 2: pick one and give one keep, one cut, one change.",
+     "Round 3: ask for it at half the length."
+    ]
+   },
+   "check": [
+    "My final version is noticeably better than the first.",
+    "My feedback named specific parts, not just \"better\" or \"shorter.\"",
+    "I know the sign that it's time to start a fresh chat."
+   ],
+   "quiz": [
+    {
+     "q": "Which feedback will get the best revision?",
+     "options": [
+      "\"Make it better.\"",
+      "\"I don't like it.\"",
+      "\"Keep the first line, cut the jargon in paragraph two, end with a question.\"",
+      "\"Try again.\""
+     ],
+     "answer": 2,
+     "explain": "Naming what to keep and what to change gives Claude a clear target."
+    },
+    {
+     "q": "A chat has gone on for hours and answers are drifting. What helps?",
+     "options": [
+      "Keep going; it'll recover",
+      "Ask for a summary, then continue in a new chat",
+      "Type in all caps",
+      "Switch to a shorter word count"
+     ],
+     "answer": 1,
+     "explain": "A fresh chat with a tight summary brings back focus without losing what you decided."
+    }
+   ],
+   "terms": [
+    "Context window"
+   ]
+  },
+  {
+   "id": "check-before-you-trust",
+   "path": "start",
+   "title": "Check before you trust",
+   "minutes": 8,
+   "why": "Claude is often right, but right often isn't always. A few habits catch most mistakes.",
+   "idea": [
+    "Match your checking to the stakes. A brainstorm needs none. A fact you'll repeat to others, a number in a report, a legal or medical point, or a quote needs a source you've looked at yourself.",
+    "Ask Claude to help you check it: \"Which of these claims are you least sure about?\" and \"Give me sources I can verify.\" With web search on, Claude can cite pages; open them, because a citation is only as good as what the page actually says.",
+    "Watch for the classic warning signs: very specific numbers with no source, quotes that sound too perfect, and references to studies, books, or cases you can't find. Those are where hallucinations hide."
+   ],
+   "try": {
+    "intro": "Run a quick fact-check on Claude's own answer.",
+    "prompt": "Give me five surprising facts about [a topic you're curious about]. For each, rate your confidence as high, medium, or low, and tell me how I could verify it.",
+    "steps": [
+     "Send the prompt.",
+     "Pick the fact with the lowest confidence.",
+     "Verify it yourself with a search or a source you trust."
+    ]
+   },
+   "check": [
+    "I verified at least one claim with a source I looked at myself.",
+    "I can name two warning signs of a possible hallucination.",
+    "I know which of my own tasks need checking every time."
+   ],
+   "quiz": [
+    {
+     "q": "Claude cites a study you can't find anywhere. What's the most likely explanation?",
+     "options": [
+      "The study is secret",
+      "It may be a hallucination",
+      "Your search engine is broken",
+      "Claude has special access"
+     ],
+     "answer": 1,
+     "explain": "Made-up citations are a known failure. If you can't find a source, don't use the claim."
+    },
+    {
+     "q": "Which task needs the most checking?",
+     "options": [
+      "Brainstorming party themes",
+      "Rewording an email for tone",
+      "A statistic you'll present to your board",
+      "Naming a pet"
+     ],
+     "answer": 2,
+     "explain": "Check in proportion to stakes. Numbers you'll repeat publicly need a verified source."
+    }
+   ],
+   "terms": [
+    "Hallucination",
+    "Retrieval-augmented generation (RAG)"
+   ]
+  },
+  {
+   "id": "choose-a-model",
+   "path": "everyday",
+   "title": "Pick a model and effort level",
+   "minutes": 6,
+   "why": "Two settings shape every answer: which model you're using and how much effort it puts in. Defaults work well; knowing the dials helps when they don't.",
+   "idea": [
+    "The model menu sits next to the send button. The current models are Fable 5.1, Opus 5.5, Sonnet 5.5, and Haiku 5.5; which ones you see depends on your plan. Bigger models are stronger on hard reasoning. Lighter ones are faster for quick tasks.",
+    "The same menu sets Effort, from Low to Max. On current models Claude decides how much to think on its own, and Effort tells it how hard to work. Higher effort can mean better answers on tough problems and slower ones on easy questions.",
+    "Anthropic's advice is to keep the defaults for everyday work and turn things up when a task is genuinely hard. Ignore cheat sheets that say to always pick one model or always max everything out."
+   ],
+   "try": {
+    "intro": "Run the same hard question at two effort levels.",
+    "prompt": "I'm deciding between [two real options, like two phones, two job offers, or two vacation spots]. Here's what matters to me: [your priorities]. Compare them and recommend one, explaining your reasoning.",
+    "steps": [
+     "Open the model menu next to the send button and note the current model and effort.",
+     "Send the prompt.",
+     "Start a new chat, raise Effort a level or two, and send it again.",
+     "Compare depth, accuracy, and how long each took."
+    ]
+   },
+   "check": [
+    "I can find the model and effort settings.",
+    "I noticed what changed, or didn't, at the higher effort level.",
+    "I know when I'd raise effort and when the default is fine."
+   ],
+   "quiz": [
+    {
+     "q": "What does Anthropic recommend for everyday work?",
+     "options": [
+      "Always use the biggest model",
+      "Always set Effort to Max",
+      "Keep the defaults; raise effort for hard tasks",
+      "Always use the smallest model to save time"
+     ],
+     "answer": 2,
+     "explain": "Defaults are tuned for everyday use. Turn things up when a task is genuinely hard."
+    },
+    {
+     "q": "A cheat sheet says \"always select Opus 4.6.\" What's the issue?",
+     "options": [
+      "Nothing; it's still best",
+      "That model has been replaced, and \"always\" is opinion",
+      "Opus doesn't exist",
+      "It's only for coding"
+     ],
+     "answer": 1,
+     "explain": "Model lineups change. Advice naming a specific version goes stale fast."
+    }
+   ],
+   "sources": [
+    {
+     "title": "Change the model, effort and thinking settings",
+     "url": "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings"
+    }
+   ],
+   "terms": [
+    "Extended thinking",
+    "Large language model (LLM)"
+   ]
+  },
+  {
+   "id": "projects-and-memory",
+   "path": "everyday",
+   "title": "Stop repeating yourself",
+   "minutes": 9,
+   "why": "If you keep pasting the same background into new chats, Claude has three places to keep it for you.",
+   "idea": [
+    "Instructions for Claude, in Settings, apply to every conversation. Use them for things that are always true: how you like answers formatted, your role, words to avoid.",
+    "Projects hold files and instructions for one area of work. Every chat in the project starts with them, so a project for a class, a client, or a newsletter means you explain once. Free accounts can make up to five projects.",
+    "Memory builds a summary from your chat history so Claude can recall context across conversations, and each project keeps its own separate memory. It's available on every plan and managed in Settings under Capabilities, where you can see or turn it off."
+   ],
+   "try": {
+    "intro": "Set up a project for something you do repeatedly.",
+    "prompt": "You're helping me with [the recurring work, like a monthly newsletter, lesson planning, or client updates]. Read the files in this project first. Ask me up to three questions about anything that's unclear, then draft [the next deliverable].",
+    "steps": [
+     "In Claude, create a new project and name it after the work.",
+     "Add one or two reference files: a past example you liked, a style guide, or notes.",
+     "Write two or three lines of project instructions: audience, tone, length.",
+     "Start a chat in the project and send the prompt."
+    ]
+   },
+   "check": [
+    "My project has at least one reference file and short instructions.",
+    "The draft reflects my files without my pasting them in.",
+    "I know the difference between Instructions for Claude, projects, and memory."
+   ],
+   "quiz": [
+    {
+     "q": "You want every chat about your book club to know the reading list. Where does it go?",
+     "options": [
+      "Instructions for Claude",
+      "A project",
+      "Nowhere; paste it each time",
+      "The model menu"
+     ],
+     "answer": 1,
+     "explain": "Project files and instructions apply to every chat in that project, and not to unrelated chats."
+    },
+    {
+     "q": "A cheat sheet says every chat starts blank. Is that still true?",
+     "options": [
+      "Yes, always",
+      "No: memory and projects can carry context across chats",
+      "Only on weekends",
+      "Only on Free"
+     ],
+     "answer": 1,
+     "explain": "Memory is on every plan, and projects carry their files and instructions into each chat."
+    }
+   ],
+   "sources": [
+    {
+     "title": "What are projects?",
+     "url": "https://support.claude.com/en/articles/9519177"
+    },
+    {
+     "title": "Use Claude's chat search and memory",
+     "url": "https://support.claude.com/en/articles/11817273"
+    },
+    {
+     "title": "Understanding Claude's personalization features",
+     "url": "https://support.claude.com/en/articles/10185728"
+    }
+   ],
+   "terms": [
+    "Project",
+    "Context window"
+   ]
+  },
+  {
+   "id": "make-real-things",
+   "path": "everyday",
+   "title": "Make real things, not just text",
+   "minutes": 8,
+   "why": "Claude can produce finished, usable things: documents, spreadsheets, charts, and small interactive tools you can open and share.",
+   "idea": [
+    "Ask for the thing itself, not a description of it. \"Make me a packing checklist I can tick off\" gets you an artifact you can use; \"How should I pack?\" gets you advice.",
+    "Artifacts open on their own, update as you ask for changes, and can be shared. People you share a link with need a Claude account to open it, so for others without one, export or download the result.",
+    "Claude can also create files like documents and spreadsheets, and read files you upload. It doesn't generate photos or illustrations, but it can build diagrams, charts, and interactive visuals."
+   ],
+   "try": {
+    "intro": "Describe a small tool and have Claude build it.",
+    "prompt": "Build me a simple interactive tracker for [a habit or goal, like reading, water, or practice minutes]. It should let me log each day, show my streak, and show a small chart of the last two weeks. Keep the design clean and calm.",
+    "steps": [
+     "Send the prompt.",
+     "Use the tracker that appears: log a few entries.",
+     "Ask for one change, like \"add a weekly goal line to the chart.\"",
+     "Notice how the artifact updates instead of starting over."
+    ]
+   },
+   "check": [
+    "I have a working tool, not just instructions.",
+    "I changed it with a follow-up request.",
+    "I know who can open a shared link and who can't."
+   ],
+   "quiz": [
+    {
+     "q": "Which prompt is most likely to get you a usable tool?",
+     "options": [
+      "\"How do people track budgets?\"",
+      "\"Make me a monthly budget tracker with categories and a total.\"",
+      "\"Budgets?\"",
+      "\"Tell me about spreadsheets.\""
+     ],
+     "answer": 1,
+     "explain": "Ask for the thing itself, with the features you need."
+    },
+    {
+     "q": "You share an artifact link with a friend who doesn't use Claude. What happens?",
+     "options": [
+      "It opens normally",
+      "They need a Claude account to view it",
+      "It emails them a PDF",
+      "Nothing; links don't exist"
+     ],
+     "answer": 1,
+     "explain": "Shared artifact links require a Claude account, except published legacy chat artifacts."
+    }
+   ],
+   "sources": [
+    {
+     "title": "Publish and share artifacts",
+     "url": "https://support.claude.com/en/articles/9547008"
+    },
+    {
+     "title": "Can Claude produce images?",
+     "url": "https://support.claude.com/en/articles/9002504"
+    }
+   ],
+   "terms": [
+    "Artifact",
+    "Multimodal AI"
+   ]
+  },
+  {
+   "id": "bring-your-tools",
+   "path": "everyday",
+   "title": "Bring your tools in",
+   "minutes": 8,
+   "why": "Connectors let Claude read from and act in apps you already use, so you stop copying and pasting between them.",
+   "idea": [
+    "A connector links Claude to one app, like Google Drive, Gmail, Slack, Notion, or your calendar. With it on, Claude can look things up there and, depending on the connector, take actions you approve. The official directory lists hundreds.",
+    "To add one: open Customize, then Connectors, click +, choose an app, click Connect, and sign in to that service. Directory connectors work on every plan, including Free. At work, an administrator may need to enable them first.",
+    "Connect only what you're comfortable having Claude read, and check what each connector can do before you rely on it. You can turn connectors off anytime."
+   ],
+   "try": {
+    "intro": "Connect one app and ask about your own stuff.",
+    "prompt": "Using my [Google Drive / calendar / email], find [something real, like the most recent document about a topic, or my free time next Tuesday] and summarize what you find in three bullets.",
+    "steps": [
+     "Open Customize, then Connectors, and click +.",
+     "Pick one app you use daily and click Connect.",
+     "Sign in and review what it can access.",
+     "Send the prompt with your app and request filled in."
+    ]
+   },
+   "check": [
+    "One connector is set up and I reviewed what it can access.",
+    "Claude answered using my own data, not general knowledge.",
+    "I know where to turn a connector off."
+   ],
+   "quiz": [
+    {
+     "q": "Where do you add a connector now?",
+     "options": [
+      "Settings → Connectors",
+      "Customize → Connectors",
+      "The model menu",
+      "You can't add them yourself"
+     ],
+     "answer": 1,
+     "explain": "Connectors moved to Customize. Older cheat sheets still point to Settings."
+    },
+    {
+     "q": "Do connectors require a paid plan?",
+     "options": [
+      "Yes, always",
+      "No: directory connectors work on every plan",
+      "Only for Gmail",
+      "Only on desktop"
+     ],
+     "answer": 1,
+     "explain": "Directory connectors work on Free too. Free accounts are limited to one custom connector."
+    }
+   ],
+   "sources": [
+    {
+     "title": "Use connectors to extend Claude's capabilities",
+     "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
+    },
+    {
+     "title": "Claude connectors directory",
+     "url": "https://claude.com/connectors"
+    }
+   ],
+   "terms": [
+    "Connector",
+    "Model Context Protocol (MCP)",
+    "Tool use"
+   ]
+  },
+  {
+   "id": "teach-a-skill",
+   "path": "everyday",
+   "title": "Teach it once with a skill",
+   "minutes": 10,
+   "why": "If you've explained the same task twice, turn it into a skill and Claude will do it your way every time.",
+   "idea": [
+    "A skill is a saved set of instructions for one kind of task: your weekly report format, how you review a draft, the checklist for an event. When a task matches, Claude picks up the skill on its own, or you can type / and choose it.",
+    "You don't write skills by hand. Ask Claude to build one, and it uses a built-in skill-creator: it interviews you about the task, writes the skill, and you review it. Skills are on every plan, including Free, and need code execution turned on.",
+    "Manage them under Customize, then Skills. Test a new skill on a real task, then refine it: \"Next time, keep it under 200 words\" becomes part of the skill when you ask Claude to update it."
+   ],
+   "try": {
+    "intro": "Build a skill for something you repeat.",
+    "prompt": "Help me create a skill for [a task you repeat, like writing meeting recaps, giving feedback on drafts, or planning weekly meals]. Interview me about how I like it done, then write the skill.",
+    "steps": [
+     "Make sure code execution is on, and check Customize, then Skills, to see what's there.",
+     "Send the prompt and answer Claude's questions like you're training a new teammate.",
+     "Review the skill it writes and ask for any fixes.",
+     "Run the skill on a real example, then refine it once."
+    ]
+   },
+   "check": [
+    "I have a skill saved that I created with Claude.",
+    "I tested it on a real task.",
+    "I refined it at least once based on the result."
+   ],
+   "quiz": [
+    {
+     "q": "When is a task a good candidate for a skill?",
+     "options": [
+      "You'll only do it once",
+      "You've explained how you want it done more than once",
+      "It's a quick factual question",
+      "Never; skills are for developers"
+     ],
+     "answer": 1,
+     "explain": "Skills shine for repeatable tasks with a consistent way of doing them."
+    },
+    {
+     "q": "How do most people create a skill?",
+     "options": [
+      "Write code from scratch",
+      "Ask Claude to build one, using its built-in skill-creator",
+      "Buy one",
+      "Email Anthropic"
+     ],
+     "answer": 1,
+     "explain": "Claude interviews you and writes the skill; you review and refine it."
+    }
+   ],
+   "credit": {
+    "text": "\"Explained it twice? Make it a skill\" comes from the \"How to Claude\" cheat sheet, author not shown."
+   },
+   "sources": [
+    {
+     "title": "Use Skills in Claude",
+     "url": "https://support.claude.com/en/articles/12512180-use-skills-in-claude"
+    }
+   ],
+   "terms": [
+    "Skill",
+    "AI automation"
+   ]
+  },
+  {
+   "id": "meet-claude-code",
+   "path": "code",
+   "title": "Meet Claude Code",
+   "minutes": 10,
+   "why": "Claude Code is Claude working directly in your files: it can read a project, make changes, and run commands, not just talk about them.",
+   "idea": [
+    "In a regular chat, Claude suggests and you copy. Claude Code is an agent: it reads your project, edits files, runs commands like tests, and works with git, checking in with you along the way.",
+    "It runs in several places that share the same engine: a terminal, VS Code and JetBrains editors, the Claude desktop app, and the web. Most of them need a paid Claude plan or an Anthropic Console account.",
+    "You don't have to be a professional developer to get value from it. It's also useful for organizing files, building small tools, and automating chores on your computer."
+   ],
+   "try": {
+    "intro": "Install Claude Code and confirm it runs.",
+    "prompt": "curl -fsSL https://claude.ai/install.sh | bash",
+    "steps": [
+     "On a Mac or Linux, open Terminal. On Windows, follow the install page for PowerShell or CMD.",
+     "Paste the install command above and press Enter. It shows no progress while downloading; that's normal.",
+     "Open a new terminal window and type: claude --version",
+     "If you'd rather skip the terminal, the desktop app includes Claude Code under its Code tab."
+    ],
+    "open": "https://code.claude.com/docs",
+    "openLabel": "Open the install guide"
+   },
+   "check": [
+    "Running claude --version prints a version number, or I've opened the Code tab in the desktop app.",
+    "I can explain how Claude Code differs from a regular chat in one sentence.",
+    "I know where to look if the install fails."
+   ],
+   "quiz": [
+    {
+     "q": "What can Claude Code do that a regular chat can't?",
+     "options": [
+      "Answer questions",
+      "Write in different tones",
+      "Edit files and run commands in your project",
+      "Translate languages"
+     ],
+     "answer": 2,
+     "explain": "Claude Code acts in your files and terminal. A chat can only suggest what to do."
+    }
+   ],
+   "sources": [
+    {
+     "title": "Claude Code overview",
+     "url": "https://code.claude.com/docs"
+    }
+   ],
+   "terms": [
+    "Claude Code",
+    "AI agent"
+   ]
+  },
+  {
+   "id": "give-it-a-map",
+   "path": "code",
+   "title": "Give it a map with CLAUDE.md",
+   "minutes": 8,
+   "why": "Claude Code starts each session fresh. A CLAUDE.md file tells it how your project works so you don't repeat yourself.",
+   "idea": [
+    "CLAUDE.md is a plain text file in your project folder that Claude Code reads at the start of every session. Put in it what a new teammate would need: what the project is, how to run it, conventions to follow, and things to avoid.",
+    "You don't have to write it from scratch. Type /init and Claude Code looks around your project and drafts one. Then edit it like any document; /memory opens it anytime.",
+    "Keep it short and specific. A few clear rules beat a long essay, and you can add to it whenever you catch yourself explaining the same thing twice."
+   ],
+   "try": {
+    "intro": "Generate a CLAUDE.md for a real folder and improve it.",
+    "prompt": "/init",
+    "steps": [
+     "In a terminal, go to a project folder (any folder of documents or code works) and type: claude",
+     "Type /init and let it draft CLAUDE.md.",
+     "Open the file and add one rule in your own words, like \"Always ask before deleting files.\"",
+     "Type /memory to see where your instruction files live."
+    ]
+   },
+   "check": [
+    "My folder now has a CLAUDE.md file.",
+    "I added at least one rule of my own.",
+    "I know that /memory is where to manage it later."
+   ],
+   "quiz": [
+    {
+     "q": "When does Claude Code read CLAUDE.md?",
+     "options": [
+      "Only when you mention it",
+      "At the start of every session",
+      "Once, when you install",
+      "Never; it's for humans"
+     ],
+     "answer": 1,
+     "explain": "It's loaded each session, which is why it's the place for standing instructions."
+    }
+   ],
+   "sources": [
+    {
+     "title": "Commands",
+     "url": "https://code.claude.com/docs/en/commands"
+    },
+    {
+     "title": "How Claude remembers your project",
+     "url": "https://code.claude.com/docs/en/memory"
+    }
+   ],
+   "terms": [
+    "Claude Code",
+    "Context window"
+   ]
+  },
+  {
+   "id": "stay-in-control",
+   "path": "code",
+   "title": "Stay in control",
+   "minutes": 9,
+   "why": "An agent that edits files needs clear brakes. Claude Code has several, and knowing them makes it safe to experiment.",
+   "idea": [
+    "By default Claude Code asks before it changes files or runs commands. Press Shift+Tab to cycle permission modes: manual (asks first), accept edits, and plan. In plan mode it researches and proposes a plan without changing anything, which is a good way to start any bigger task.",
+    "Press Esc to stop Claude mid-response and redirect it; the work so far is kept. If a change goes wrong, /rewind rolls the conversation or the file changes back to an earlier point. Pressing Esc twice on an empty prompt opens the same rewind menu.",
+    "Before you accept work, look at it: /diff shows every file change. For anything shared with others, /code-review checks your changes for bugs and /security-review checks them for security risks."
+   ],
+   "try": {
+    "intro": "Practice the brakes on a harmless task.",
+    "prompt": "Create a file called notes.md with a short to-do list for planning a picnic. Plan first; don't change anything until I approve.",
+    "steps": [
+     "Start claude in a test folder and press Shift+Tab until you're in plan mode.",
+     "Send the prompt and read the plan before approving.",
+     "After it creates the file, type /diff to see the change.",
+     "Type /rewind and roll the change back."
+    ]
+   },
+   "check": [
+    "I used plan mode and approved a plan before any file changed.",
+    "I saw a change with /diff.",
+    "I undid a change with /rewind or Esc Esc."
+   ],
+   "quiz": [
+    {
+     "q": "You want Claude Code to propose an approach without touching any files. What do you use?",
+     "options": [
+      "/clear",
+      "Plan mode",
+      "/usage",
+      "Ctrl+V"
+     ],
+     "answer": 1,
+     "explain": "Plan mode researches and proposes. Nothing changes until you approve."
+    },
+    {
+     "q": "Claude made a change you don't want. What's the fastest undo?",
+     "options": [
+      "Delete the folder",
+      "/rewind",
+      "/help",
+      "Reinstall Claude Code"
+     ],
+     "answer": 1,
+     "explain": "/rewind rolls back the conversation, the file changes, or both, to an earlier point."
+    }
+   ],
+   "sources": [
+    {
+     "title": "Commands",
+     "url": "https://code.claude.com/docs/en/commands"
+    },
+    {
+     "title": "Interactive mode",
+     "url": "https://code.claude.com/docs/en/interactive-mode"
+    }
+   ],
+   "terms": [
+    "AI agent"
+   ]
+  },
+  {
+   "id": "keep-sessions-healthy",
+   "path": "code",
+   "title": "Keep sessions healthy",
+   "minutes": 7,
+   "why": "Long sessions fill up Claude's working memory. A few commands keep it focused and keep you within your plan.",
+   "idea": [
+    "Everything in a session, including files Claude has read, counts against its context window. /context shows a grid of what's taking up room. /compact summarizes the conversation so far and keeps going with more space.",
+    "When you switch to an unrelated task, /clear starts fresh. Your old conversation isn't lost: /resume reopens it later, and claude -c continues the most recent one in the current folder.",
+    "/usage shows what this session cost and where you stand against your plan's limits. For harder problems, /effort raises how hard Claude thinks; for one tough question, include the word ultrathink in your message."
+   ],
+   "try": {
+    "intro": "Check, trim, and resume a session.",
+    "prompt": "/context",
+    "steps": [
+     "In any session, type /context and look at what's using space.",
+     "Type /compact and keep working.",
+     "Type /clear, then /resume and reopen the earlier conversation.",
+     "Type /usage to see where you stand."
+    ]
+   },
+   "check": [
+    "I can find out what's filling Claude's context.",
+    "I know the difference between /compact and /clear.",
+    "I can get back to an earlier conversation."
+   ],
+   "quiz": [
+    {
+     "q": "You're switching to a totally different task. Which command fits best?",
+     "options": [
+      "/compact",
+      "/clear",
+      "/effort",
+      "ultrathink"
+     ],
+     "answer": 1,
+     "explain": "/clear gives a clean slate for unrelated work, and the old conversation stays resumable."
+    },
+    {
+     "q": "Which word in a message asks for deeper reasoning on that one turn?",
+     "options": [
+      "think harder",
+      "ultra think",
+      "ultrathink",
+      "maxthink"
+     ],
+     "answer": 2,
+     "explain": "Per the docs, ultrathink (one word) is the keyword. \"Think harder\" is read as ordinary text, despite what some cheat sheets say."
+    }
+   ],
+   "sources": [
+    {
+     "title": "Commands",
+     "url": "https://code.claude.com/docs/en/commands"
+    },
+    {
+     "title": "Model configuration",
+     "url": "https://code.claude.com/docs/en/model-config"
+    },
+    {
+     "title": "CLI reference",
+     "url": "https://code.claude.com/docs/en/cli-reference"
+    }
+   ],
+   "terms": [
+    "Context window",
+    "Token",
+    "Extended thinking"
+   ]
+  }
+ ]
+}

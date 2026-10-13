@@ -79,9 +79,33 @@ def check_web(url):
     return "unclear", "No response"
 
 
+def source_links(start):
+    """Official source links cited by lessons, claims, and commands, as extra entries to check."""
+    seen, extra = set(), []
+    def add(url, title, where):
+        if url and url not in seen:
+            seen.add(url)
+            extra.append({"number": f"src{start + len(extra) + 1}", "name": title or url, "category": where, "url": url})
+    d = os.path.join(ROOT, "data")
+    try:
+        for l in json.load(open(os.path.join(d, "lessons.json"), encoding="utf-8"))["lessons"]:
+            for s in l.get("sources", []):
+                add(s["url"], s["title"], "Lesson source")
+            add(l.get("try", {}).get("open"), "Lesson link", "Lesson source")
+        for c in json.load(open(os.path.join(d, "claims.json"), encoding="utf-8"))["claims"]:
+            add(c.get("source_url"), c.get("source_title"), "Sheet check source")
+        cmds = json.load(open(os.path.join(d, "commands.json"), encoding="utf-8"))
+        for s in cmds.get("sources", []):
+            add(s["url"], s["title"], "Command reference source")
+    except FileNotFoundError:
+        pass
+    return extra
+
+
 def main():
     with open(DATA, encoding="utf-8") as f:
         tools = json.load(f)["tools"]
+    tools = tools + source_links(len(tools))
 
     groups = {"broken": [], "watch": [], "unclear": []}
     for t in tools:
@@ -93,7 +117,7 @@ def main():
         if result != "ok":
             groups[result].append((t, detail))
 
-    lines = ["Automated monthly check of every link in `data/tools.json`.", ""]
+    lines = ["Automated monthly check of every link in the tool guide and every official source the lessons, sheet check, and command reference cite.", ""]
     titles = {
         "broken": "Broken (fix these)",
         "watch": "Worth a look",
@@ -108,7 +132,7 @@ def main():
         lines.append("")
     if not any(groups.values()):
         lines.append("All links passed.")
-    lines += ["", f"Checked {len(tools)} links. When an entry changes, update its `url`, `status`, and `note` in `data/tools.json`."]
+    lines += ["", f"Checked {len(tools)} links. Tool entries live in `data/tools.json`; source links live in `data/lessons.json`, `data/claims.json`, and `data/commands.json`. A moved help-center page may mean the facts on that page changed too, so re-read it before just swapping the link."]
 
     with open(os.path.join(ROOT, "link-report.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")

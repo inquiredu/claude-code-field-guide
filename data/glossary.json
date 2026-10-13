@@ -1,37 +1,411 @@
 {
   "source": "\"20 Basic But Important AI Terms\" by Shushant Lakhyani, shared in the Today_I_Learned_This community on Reddit, plus terms the Claude infographics use without defining",
   "terms": [
-    {"term":"Artificial intelligence (AI)","short":"Computer systems that do tasks we'd normally say need human intelligence.","plain":"An umbrella term for software that recognizes patterns, makes predictions, understands language, or makes decisions. It covers everything from spam filters to chat assistants. Doing a task well doesn't mean the system thinks the way a person does.","example":"A photo app that groups pictures by face is using AI.","sheet_said":"The science of creating machines that can think, learn, and solve problems like humans.","stamp":"sharpened","why":"\"Think like humans\" overstates it. AI systems can match or beat people at specific tasks while working very differently inside.","related":["Machine learning (ML)","Large language model (LLM)"],"group":"Foundations"},
-    {"term":"Machine learning (ML)","short":"Software that learns patterns from examples instead of following hand-written rules.","plain":"Instead of a programmer writing every rule, the system is shown many examples and adjusts itself until its predictions match. Most modern AI is machine learning.","example":"An email filter learns what spam looks like from millions of emails people marked as spam.","sheet_said":"A subset of AI where computers learn patterns from data instead of being explicitly programmed.","stamp":"accurate","related":["Training data","Deep learning"],"group":"Foundations"},
-    {"term":"Deep learning","short":"Machine learning that uses neural networks with many layers.","plain":"Each layer picks up on slightly more complex patterns than the one before. Stacking many layers is what made recent leaps in speech, images, and language possible.","example":"Voice assistants turn your speech into text with deep learning.","sheet_said":"A type of machine learning that uses layered neural networks to analyze data, much like the human brain.","stamp":"sharpened","why":"Neural networks were loosely inspired by brains, but they don't work much like one. The comparison is a metaphor, not a description.","related":["Neural network","Machine learning (ML)"],"group":"Foundations"},
-    {"term":"Neural network","short":"A math system of connected units that adjust their connections as they learn.","plain":"Each unit takes in numbers, weighs them, and passes a result on. Training tunes billions of those weights so the whole network produces useful outputs.","example":"The model behind Claude is a very large neural network.","sheet_said":"A computer system inspired by the human brain, made of interconnected \"neurons\" that process information.","stamp":"accurate","related":["Deep learning","Parameters"],"group":"Foundations"},
-    {"term":"Generative AI","short":"AI that creates new content: text, images, audio, video, or code.","plain":"Generative models learn the patterns in huge amounts of existing material, then produce new material that follows those patterns. What they make is new, but it's shaped by what they learned from.","example":"Asking Claude to draft a newsletter is using generative AI.","sheet_said":"AI that creates new content like text, images, music, or code by learning from existing data.","stamp":"accurate","related":["Large language model (LLM)","Training data"],"group":"Foundations"},
-    {"term":"Large language model (LLM)","short":"A generative AI model trained on large amounts of text to read and write language.","plain":"An LLM works by predicting what text should come next, one small piece at a time, based on everything before it. Trained at enormous scale, that simple goal produces systems that can explain, summarize, write, and reason through problems. Claude is an LLM.","example":"Claude, ChatGPT, and Gemini are all built on LLMs.","sheet_said":"A type of generative AI trained on massive amounts of text to understand and generate human-like language.","stamp":"accurate","related":["Token","Context window","Hallucination"],"group":"Foundations"},
-    {"term":"GPT","short":"OpenAI's family of language models, short for Generative Pre-trained Transformer.","plain":"\"Transformer\" is the model design almost every modern LLM uses, Claude included. GPT is the name of OpenAI's models specifically, so Claude is a transformer-based LLM but not a GPT.","example":"ChatGPT runs on OpenAI's GPT models.","sheet_said":"A popular kind of LLM developed by OpenAI that can chat, write, code, and answer questions using natural language.","stamp":"sharpened","why":"GPT is a product family, not a kind of LLM. Calling every chatbot \"a GPT\" mixes up brand and technology.","related":["Transformer","Large language model (LLM)"],"group":"Foundations"},
-    {"term":"Transformer","short":"The model design behind nearly all modern language models.","plain":"Introduced by Google researchers in 2017, transformers let a model weigh how every part of the input relates to every other part at once. That ability to track context is a big reason today's AI writes so fluently.","example":"Claude, GPT, and Gemini all use transformer designs.","stamp":"added","related":["GPT","Large language model (LLM)"],"group":"Foundations"},
-    {"term":"Training data","short":"The examples a model learns from.","plain":"For a language model, that's large collections of text and, increasingly, images and other media. What's in the training data, and what's missing, shapes what the model knows and the blind spots it has.","example":"A model trained mostly on English text will usually be stronger in English.","sheet_said":"The information fed into an AI model to help it learn patterns and make predictions.","stamp":"accurate","related":["Bias in AI","Knowledge cutoff"],"group":"How models work"},
-    {"term":"Parameters","short":"The internal numbers a model adjusts during training.","plain":"They're the weights in the neural network. More parameters can let a model capture more patterns, but size alone doesn't decide quality; training data and methods matter just as much.","example":"Large models have billions of parameters.","stamp":"added","related":["Neural network","Training data"],"group":"How models work"},
-    {"term":"Token","short":"A small chunk of text, often a word or part of one, that a model reads and writes.","plain":"Models don't see letters or whole words; they see tokens. Usage limits, pricing, and context windows are all counted in tokens. In English, a token averages roughly three-quarters of a word.","example":"\"Unbelievable\" might be split into tokens like \"un\", \"believ\", \"able\".","sheet_said":"A small chunk of text (like a word or part of a word) that AI models use to process and generate language.","stamp":"accurate","related":["Context window","Large language model (LLM)"],"group":"How models work"},
-    {"term":"Context window","short":"How much text a model can consider at once, counted in tokens.","plain":"Everything in the conversation so far, plus any files you've shared, has to fit in the context window. When a conversation gets very long, older details can fall out or get less attention, which is why starting fresh sometimes helps.","example":"A long PDF and a long chat both use up context window.","stamp":"added","related":["Token","Project"],"group":"How models work"},
-    {"term":"Inference","short":"When a trained model is used to produce an answer.","plain":"Training is when the model learns; inference is every time it's used afterward. Each message you send to Claude runs inference.","example":"Asking Claude a question triggers inference on Anthropic's servers.","sheet_said":"The step where a trained AI model uses its knowledge to make predictions or generate results.","stamp":"accurate","related":["Training data"],"group":"How models work"},
-    {"term":"Knowledge cutoff","short":"The date after which a model's training data stops.","plain":"A model doesn't know about events after its cutoff unless it can search the web or you give it the information. Ask about recent news without search turned on and it may not know, or may guess.","example":"Ask about last week's news with web search off, and Claude may say it can't know.","stamp":"added","related":["Training data","Retrieval-augmented generation (RAG)"],"group":"How models work"},
-    {"term":"Hallucination","short":"When a model states something false with confidence.","plain":"Because LLMs generate likely-sounding text, they can produce made-up facts, quotes, or sources that read as real. It happens less with newer models and with web search, but it still happens, so check anything that matters.","example":"A model citing a book or court case that doesn't exist.","stamp":"added","related":["Retrieval-augmented generation (RAG)","Large language model (LLM)"],"group":"Using AI well"},
-    {"term":"Prompt","short":"What you tell the AI: your instructions, question, and any context.","plain":"The clearer your prompt, the better the result. Good prompts say what you want, why, what good looks like, and include examples or files when they help.","example":"\"Draft a 150-word note to parents about Friday's early release, warm and plain.\"","sheet_said":"The instruction or input text you give an AI model to tell it what you want it to do.","stamp":"accurate","related":["Context window","Extended thinking"],"group":"Using AI well"},
-    {"term":"Retrieval-augmented generation (RAG)","short":"Having the model look things up before it answers.","plain":"The system first finds relevant documents, from the web, your files, or a database, and hands them to the model with your question. Grounding answers in real sources usually makes them more accurate and easier to check, though it doesn't guarantee correctness.","example":"When Claude searches the web and cites pages, it's using a form of retrieval.","sheet_said":"A technique where AI retrieves facts from external sources before generating an answer, improving accuracy.","stamp":"sharpened","why":"Retrieval can improve accuracy, but the model can still misread or misquote what it found.","related":["Hallucination","Knowledge cutoff"],"group":"Using AI well"},
-    {"term":"Fine-tuning","short":"Further training a model on specialized examples.","plain":"Starting from a general model, you train it more on data from one area so it performs better there. Most people never need this; clear prompts, projects, and skills cover most everyday customizing.","example":"A company might fine-tune a model on its own support conversations.","sheet_said":"The process of customizing a pre-trained AI model with specific data to make it perform better for a certain task.","stamp":"accurate","related":["Training data","Skill"],"group":"Using AI well"},
-    {"term":"Multimodal AI","short":"AI that works with more than one kind of input, like text, images, and audio.","plain":"A multimodal model can read a photo of a whiteboard, a chart, or a scanned form along with your text. Claude can read images and documents.","example":"Sharing a screenshot and asking Claude what an error message means.","sheet_said":"AI that can understand and combine multiple types of input, like text, images, and audio.","stamp":"accurate","related":["Computer vision"],"group":"Using AI well"},
-    {"term":"Computer vision","short":"The part of AI that interprets images and video.","plain":"Computer vision covers recognizing objects, reading text in images, and describing scenes. Models detect patterns in pixels; they don't see the way people do.","example":"Your phone reading a check you photograph for deposit.","sheet_said":"The field of AI that allows machines to \"see\" and understand images or videos like humans do.","stamp":"sharpened","why":"\"Like humans do\" overstates it. Vision models can be fooled in ways people wouldn't be.","related":["Multimodal AI"],"group":"Using AI well"},
-    {"term":"Bias in AI","short":"When an AI system's outputs are unfair or skewed toward some groups or views.","plain":"Bias can come from training data, from how a system is designed or tested, and from how people use its outputs. It's a reason to review AI output that affects people's opportunities.","example":"A hiring screen that ranks candidates lower because of patterns in past biased decisions.","sheet_said":"When an AI model produces unfair or skewed results due to biased data used during training.","stamp":"sharpened","why":"Training data is one source, but design choices and how outputs are used can introduce bias too.","related":["Training data","Explainable AI (XAI)"],"group":"Responsible use"},
-    {"term":"Explainable AI (XAI)","short":"Methods that help people understand why an AI produced a result.","plain":"Large models are hard to inspect directly, so researchers build tools to trace which inputs and internal patterns drove an answer. It matters most when AI decisions affect people.","example":"A loan system that can show which factors drove a decision.","sheet_said":"Methods that help humans understand how and why an AI system made a certain decision.","stamp":"accurate","related":["Bias in AI"],"group":"Responsible use"},
-    {"term":"AI agent","short":"An AI system that takes steps toward a goal on its own, using tools.","plain":"Instead of answering once, an agent works in a loop: plan, act with a tool (search, run code, edit a file), check the result, repeat. People set the goal and boundaries; good agents check in before consequential actions.","example":"Claude Code reading a codebase, making a change, running tests, and fixing what failed.","sheet_said":"A self-operating AI system that can take actions, make decisions, or complete tasks without constant human input.","stamp":"accurate","related":["Tool use","Claude Code"],"group":"Claude's toolkit"},
-    {"term":"AI automation","short":"Using AI to handle repetitive digital tasks.","plain":"Automation can be as simple as a saved prompt you reuse or as involved as a scheduled agent that runs every morning. The time saved is real; so is the need to check outputs, especially early on.","example":"A weekly task that summarizes new support tickets.","sheet_said":"Using AI agents or systems to automatically perform repetitive digital tasks, saving time and reducing manual effort.","stamp":"accurate","related":["AI agent","Skill"],"group":"Claude's toolkit"},
-    {"term":"Tool use","short":"When a model calls an outside tool, like search or a calculator, to do part of a task.","plain":"The model decides a tool would help, asks for it, gets the result, and keeps going. Tool use is what lets an AI check today's information, run code, or act in other apps.","example":"Claude searching the web before answering a question about current events.","stamp":"added","related":["AI agent","Model Context Protocol (MCP)"],"group":"Claude's toolkit"},
-    {"term":"Model Context Protocol (MCP)","short":"An open standard for connecting AI apps to outside tools and data.","plain":"Anthropic introduced MCP in 2024 so any AI app could plug into tools through one common format, like a universal adapter. In Claude, many connectors are built on MCP. How secure a connection is depends on the server and the permissions you grant.","example":"A connector that lets Claude read your Notion pages.","sheet_said":"A system that lets it securely connect with external tools, databases, and APIs to fetch real-world information.","stamp":"sharpened","why":"MCP is a standard, not a guarantee of security. Safety depends on which servers you connect and what access you allow.","related":["Connector","Tool use"],"group":"Claude's toolkit"},
-    {"term":"Extended thinking","short":"Letting the model reason step by step before it answers.","plain":"With more room to think, a model can work through harder problems: planning, math, tricky analysis. It takes longer, so it's most worth it when the question is genuinely hard.","example":"Turning on deeper thinking before asking Claude to compare three contracts.","stamp":"added","related":["Prompt"],"group":"Claude's toolkit"},
-    {"term":"Project","short":"A Claude workspace that keeps files and instructions across chats.","plain":"Upload reference files and write instructions once; every new chat in the project starts with them. Good for ongoing work like a class, a client, or a newsletter.","example":"A project holding your style guide and last term's newsletters.","stamp":"added","related":["Context window","Skill"],"group":"Claude's toolkit"},
-    {"term":"Artifact","short":"Something Claude makes that you can open, use, and share, like a document, chart, or small app.","plain":"Instead of a wall of text in the chat, Claude can produce a finished piece you can view on its own, keep editing, and share by link.","example":"An interactive budget calculator built from a description.","stamp":"added","related":["Project"],"group":"Claude's toolkit"},
-    {"term":"Connector","short":"A link that lets Claude work with one of your apps, like email, calendar, or a drive.","plain":"With a connector turned on, Claude can read from and act in that app within the permissions you approve, so you don't have to copy and paste.","example":"Connecting Google Drive so Claude can find last quarter's report.","stamp":"added","related":["Model Context Protocol (MCP)","Tool use"],"group":"Claude's toolkit"},
-    {"term":"Skill","short":"A saved set of instructions that teaches Claude to do a task the same way every time.","plain":"A skill packages how you want something done, like your report format or review checklist, so Claude follows it whenever that task comes up. Teach it once instead of re-explaining.","example":"A \"weekly update\" skill that always uses your headings and length.","stamp":"added","related":["Project","AI automation"],"group":"Claude's toolkit"},
-    {"term":"Claude Code","short":"Anthropic's agentic coding tool that works directly in your files and terminal.","plain":"Claude Code reads a codebase, edits files, runs commands, and works with git. It runs in a terminal, code editors, a desktop app, and the web.","example":"Asking Claude Code to write tests for a module, run them, and fix failures.","stamp":"added","related":["AI agent","Tool use"],"group":"Claude's toolkit"}
+    {
+      "term": "Artificial intelligence (AI)",
+      "short": "Computer systems that do tasks we'd normally say need human intelligence.",
+      "plain": "An umbrella term for software that recognizes patterns, makes predictions, understands language, or makes decisions. It covers everything from spam filters to chat assistants. Doing a task well doesn't mean the system thinks the way a person does.",
+      "example": "A photo app that groups pictures by face is using AI.",
+      "sheet_said": "The science of creating machines that can think, learn, and solve problems like humans.",
+      "stamp": "sharpened",
+      "why": "\"Think like humans\" overstates it. AI systems can match or beat people at specific tasks while working very differently inside.",
+      "related": [
+        "Machine learning (ML)",
+        "Large language model (LLM)"
+      ],
+      "group": "Foundations"
+    },
+    {
+      "term": "Machine learning (ML)",
+      "short": "Software that learns patterns from examples instead of following hand-written rules.",
+      "plain": "Instead of a programmer writing every rule, the system is shown many examples and adjusts itself until its predictions match. Most modern AI is machine learning.",
+      "example": "An email filter learns what spam looks like from millions of emails people marked as spam.",
+      "sheet_said": "A subset of AI where computers learn patterns from data instead of being explicitly programmed.",
+      "stamp": "accurate",
+      "related": [
+        "Training data",
+        "Deep learning"
+      ],
+      "group": "Foundations"
+    },
+    {
+      "term": "Deep learning",
+      "short": "Machine learning that uses neural networks with many layers.",
+      "plain": "Each layer picks up on slightly more complex patterns than the one before. Stacking many layers is what made recent leaps in speech, images, and language possible.",
+      "example": "Voice assistants turn your speech into text with deep learning.",
+      "sheet_said": "A type of machine learning that uses layered neural networks to analyze data, much like the human brain.",
+      "stamp": "sharpened",
+      "why": "Neural networks were loosely inspired by brains, but they don't work much like one. The comparison is a metaphor, not a description.",
+      "related": [
+        "Neural network",
+        "Machine learning (ML)"
+      ],
+      "group": "Foundations"
+    },
+    {
+      "term": "Neural network",
+      "short": "A math system of connected units that adjust their connections as they learn.",
+      "plain": "Each unit takes in numbers, weighs them, and passes a result on. Training tunes billions of those weights so the whole network produces useful outputs.",
+      "example": "The model behind Claude is a very large neural network.",
+      "sheet_said": "A computer system inspired by the human brain, made of interconnected \"neurons\" that process information.",
+      "stamp": "accurate",
+      "related": [
+        "Deep learning",
+        "Parameters"
+      ],
+      "group": "Foundations"
+    },
+    {
+      "term": "Generative AI",
+      "short": "AI that creates new content: text, images, audio, video, or code.",
+      "plain": "Generative models learn the patterns in huge amounts of existing material, then produce new material that follows those patterns. What they make is new, but it's shaped by what they learned from.",
+      "example": "Asking Claude to draft a newsletter is using generative AI.",
+      "sheet_said": "AI that creates new content like text, images, music, or code by learning from existing data.",
+      "stamp": "accurate",
+      "related": [
+        "Large language model (LLM)",
+        "Training data"
+      ],
+      "group": "Foundations"
+    },
+    {
+      "term": "Large language model (LLM)",
+      "short": "A generative AI model trained on large amounts of text to read and write language.",
+      "plain": "An LLM works by predicting what text should come next, one small piece at a time, based on everything before it. Trained at enormous scale, that simple goal produces systems that can explain, summarize, write, and reason through problems. Claude is an LLM.",
+      "example": "Claude, ChatGPT, and Gemini are all built on LLMs.",
+      "sheet_said": "A type of generative AI trained on massive amounts of text to understand and generate human-like language.",
+      "stamp": "accurate",
+      "related": [
+        "Token",
+        "Context window",
+        "Hallucination"
+      ],
+      "group": "Foundations"
+    },
+    {
+      "term": "GPT",
+      "short": "OpenAI's family of language models, short for Generative Pre-trained Transformer.",
+      "plain": "\"Transformer\" is the model design almost every modern LLM uses, Claude included. GPT is the name of OpenAI's models specifically, so Claude is a transformer-based LLM but not a GPT.",
+      "example": "ChatGPT runs on OpenAI's GPT models.",
+      "sheet_said": "A popular kind of LLM developed by OpenAI that can chat, write, code, and answer questions using natural language.",
+      "stamp": "sharpened",
+      "why": "GPT is a product family, not a kind of LLM. Calling every chatbot \"a GPT\" mixes up brand and technology.",
+      "related": [
+        "Transformer",
+        "Large language model (LLM)"
+      ],
+      "group": "Foundations"
+    },
+    {
+      "term": "Transformer",
+      "short": "The model design behind nearly all modern language models.",
+      "plain": "Introduced by Google researchers in 2017, transformers let a model weigh how every part of the input relates to every other part at once. That ability to track context is a big reason today's AI writes so fluently.",
+      "example": "Claude, GPT, and Gemini all use transformer designs.",
+      "stamp": "added",
+      "related": [
+        "GPT",
+        "Large language model (LLM)"
+      ],
+      "group": "Foundations"
+    },
+    {
+      "term": "Training data",
+      "short": "The examples a model learns from.",
+      "plain": "For a language model, that's large collections of text and, increasingly, images and other media. What's in the training data, and what's missing, shapes what the model knows and the blind spots it has.",
+      "example": "A model trained mostly on English text will usually be stronger in English.",
+      "sheet_said": "The information fed into an AI model to help it learn patterns and make predictions.",
+      "stamp": "accurate",
+      "related": [
+        "Bias in AI",
+        "Knowledge cutoff"
+      ],
+      "group": "How models work"
+    },
+    {
+      "term": "Parameters",
+      "short": "The internal numbers a model adjusts during training.",
+      "plain": "They're the weights in the neural network. More parameters can let a model capture more patterns, but size alone doesn't decide quality; training data and methods matter just as much.",
+      "example": "Large models have billions of parameters.",
+      "stamp": "added",
+      "related": [
+        "Neural network",
+        "Training data"
+      ],
+      "group": "How models work"
+    },
+    {
+      "term": "Token",
+      "short": "A small chunk of text, often a word or part of one, that a model reads and writes.",
+      "plain": "Models don't see letters or whole words; they see tokens. Usage limits, pricing, and context windows are all counted in tokens. In English, a token averages roughly three-quarters of a word.",
+      "example": "\"Unbelievable\" might be split into tokens like \"un\", \"believ\", \"able\".",
+      "sheet_said": "A small chunk of text (like a word or part of a word) that AI models use to process and generate language.",
+      "stamp": "accurate",
+      "related": [
+        "Context window",
+        "Large language model (LLM)"
+      ],
+      "group": "How models work"
+    },
+    {
+      "term": "Context window",
+      "short": "How much text a model can consider at once, counted in tokens.",
+      "plain": "Everything in the conversation so far, plus any files you've shared, has to fit in the context window. When a conversation gets very long, older details can fall out or get less attention, which is why starting fresh sometimes helps.",
+      "example": "A long PDF and a long chat both use up context window.",
+      "stamp": "added",
+      "related": [
+        "Token",
+        "Project"
+      ],
+      "group": "How models work"
+    },
+    {
+      "term": "Inference",
+      "short": "When a trained model is used to produce an answer.",
+      "plain": "Training is when the model learns; inference is every time it's used afterward. Each message you send to Claude runs inference.",
+      "example": "Asking Claude a question triggers inference on Anthropic's servers.",
+      "sheet_said": "The step where a trained AI model uses its knowledge to make predictions or generate results.",
+      "stamp": "accurate",
+      "related": [
+        "Training data"
+      ],
+      "group": "How models work"
+    },
+    {
+      "term": "Knowledge cutoff",
+      "short": "The date after which a model's training data stops.",
+      "plain": "A model doesn't know about events after its cutoff unless it can search the web or you give it the information. Ask about recent news without search turned on and it may not know, or may guess.",
+      "example": "Ask about last week's news with web search off, and Claude may say it can't know.",
+      "stamp": "added",
+      "related": [
+        "Training data",
+        "Retrieval-augmented generation (RAG)"
+      ],
+      "group": "How models work"
+    },
+    {
+      "term": "Hallucination",
+      "short": "When a model states something false with confidence.",
+      "plain": "Because LLMs generate likely-sounding text, they can produce made-up facts, quotes, or sources that read as real. It happens less with newer models and with web search, but it still happens, so check anything that matters.",
+      "example": "A model citing a book or court case that doesn't exist.",
+      "stamp": "added",
+      "related": [
+        "Retrieval-augmented generation (RAG)",
+        "Large language model (LLM)"
+      ],
+      "group": "Using AI well"
+    },
+    {
+      "term": "Prompt",
+      "short": "What you tell the AI: your instructions, question, and any context.",
+      "plain": "The clearer your prompt, the better the result. Good prompts say what you want, why, what good looks like, and include examples or files when they help.",
+      "example": "\"Draft a 150-word note to parents about Friday's early release, warm and plain.\"",
+      "sheet_said": "The instruction or input text you give an AI model to tell it what you want it to do.",
+      "stamp": "accurate",
+      "related": [
+        "Context window",
+        "Extended thinking"
+      ],
+      "group": "Using AI well"
+    },
+    {
+      "term": "Retrieval-augmented generation (RAG)",
+      "short": "Having the model look things up before it answers.",
+      "plain": "The system first finds relevant documents, from the web, your files, or a database, and hands them to the model with your question. Grounding answers in real sources usually makes them more accurate and easier to check, though it doesn't guarantee correctness.",
+      "example": "When Claude searches the web and cites pages, it's using a form of retrieval.",
+      "sheet_said": "A technique where AI retrieves facts from external sources before generating an answer, improving accuracy.",
+      "stamp": "sharpened",
+      "why": "Retrieval can improve accuracy, but the model can still misread or misquote what it found.",
+      "related": [
+        "Hallucination",
+        "Knowledge cutoff"
+      ],
+      "group": "Using AI well"
+    },
+    {
+      "term": "Fine-tuning",
+      "short": "Further training a model on specialized examples.",
+      "plain": "Starting from a general model, you train it more on data from one area so it performs better there. Most people never need this; clear prompts, projects, and skills cover most everyday customizing.",
+      "example": "A company might fine-tune a model on its own support conversations.",
+      "sheet_said": "The process of customizing a pre-trained AI model with specific data to make it perform better for a certain task.",
+      "stamp": "accurate",
+      "related": [
+        "Training data",
+        "Skill"
+      ],
+      "group": "Using AI well"
+    },
+    {
+      "term": "Multimodal AI",
+      "short": "AI that works with more than one kind of input, like text, images, and audio.",
+      "plain": "A multimodal model can read a photo of a whiteboard, a chart, or a scanned form along with your text. Claude can read images and documents.",
+      "example": "Sharing a screenshot and asking Claude what an error message means.",
+      "sheet_said": "AI that can understand and combine multiple types of input, like text, images, and audio.",
+      "stamp": "accurate",
+      "related": [
+        "Computer vision"
+      ],
+      "group": "Using AI well"
+    },
+    {
+      "term": "Computer vision",
+      "short": "The part of AI that interprets images and video.",
+      "plain": "Computer vision covers recognizing objects, reading text in images, and describing scenes. Models detect patterns in pixels; they don't see the way people do.",
+      "example": "Your phone reading a check you photograph for deposit.",
+      "sheet_said": "The field of AI that allows machines to \"see\" and understand images or videos like humans do.",
+      "stamp": "sharpened",
+      "why": "\"Like humans do\" overstates it. Vision models can be fooled in ways people wouldn't be.",
+      "related": [
+        "Multimodal AI"
+      ],
+      "group": "Using AI well"
+    },
+    {
+      "term": "Bias in AI",
+      "short": "When an AI system's outputs are unfair or skewed toward some groups or views.",
+      "plain": "Bias can come from training data, from how a system is designed or tested, and from how people use its outputs. It's a reason to review AI output that affects people's opportunities.",
+      "example": "A hiring screen that ranks candidates lower because of patterns in past biased decisions.",
+      "sheet_said": "When an AI model produces unfair or skewed results due to biased data used during training.",
+      "stamp": "sharpened",
+      "why": "Training data is one source, but design choices and how outputs are used can introduce bias too.",
+      "related": [
+        "Training data",
+        "Explainable AI (XAI)"
+      ],
+      "group": "Responsible use"
+    },
+    {
+      "term": "Explainable AI (XAI)",
+      "short": "Methods that help people understand why an AI produced a result.",
+      "plain": "Large models are hard to inspect directly, so researchers build tools to trace which inputs and internal patterns drove an answer. It matters most when AI decisions affect people.",
+      "example": "A loan system that can show which factors drove a decision.",
+      "sheet_said": "Methods that help humans understand how and why an AI system made a certain decision.",
+      "stamp": "accurate",
+      "related": [
+        "Bias in AI"
+      ],
+      "group": "Responsible use"
+    },
+    {
+      "term": "AI agent",
+      "short": "An AI system that takes steps toward a goal on its own, using tools.",
+      "plain": "Instead of answering once, an agent works in a loop: plan, act with a tool (search, run code, edit a file), check the result, repeat. People set the goal and boundaries; good agents check in before consequential actions.",
+      "example": "Claude Code reading a codebase, making a change, running tests, and fixing what failed.",
+      "sheet_said": "A self-operating AI system that can take actions, make decisions, or complete tasks without constant human input.",
+      "stamp": "accurate",
+      "related": [
+        "Tool use",
+        "Claude Code"
+      ],
+      "group": "Claude's toolkit"
+    },
+    {
+      "term": "AI automation",
+      "short": "Using AI to handle repetitive digital tasks.",
+      "plain": "Automation can be as simple as a saved prompt you reuse or as involved as a scheduled agent that runs every morning. The time saved is real; so is the need to check outputs, especially early on.",
+      "example": "A weekly task that summarizes new support tickets.",
+      "sheet_said": "Using AI agents or systems to automatically perform repetitive digital tasks, saving time and reducing manual effort.",
+      "stamp": "accurate",
+      "related": [
+        "AI agent",
+        "Skill"
+      ],
+      "group": "Claude's toolkit"
+    },
+    {
+      "term": "Tool use",
+      "short": "When a model calls an outside tool, like search or a calculator, to do part of a task.",
+      "plain": "The model decides a tool would help, asks for it, gets the result, and keeps going. Tool use is what lets an AI check today's information, run code, or act in other apps.",
+      "example": "Claude searching the web before answering a question about current events.",
+      "stamp": "added",
+      "related": [
+        "AI agent",
+        "Model Context Protocol (MCP)"
+      ],
+      "group": "Claude's toolkit"
+    },
+    {
+      "term": "Model Context Protocol (MCP)",
+      "short": "An open standard for connecting AI apps to outside tools and data.",
+      "plain": "Anthropic introduced MCP in 2024 so any AI app could plug into tools through one common format, like a universal adapter. In Claude, many connectors are built on MCP. How secure a connection is depends on the server and the permissions you grant.",
+      "example": "A connector that lets Claude read your Notion pages.",
+      "sheet_said": "A system that lets it securely connect with external tools, databases, and APIs to fetch real-world information.",
+      "stamp": "sharpened",
+      "why": "MCP is a standard, not a guarantee of security. Safety depends on which servers you connect and what access you allow.",
+      "related": [
+        "Connector",
+        "Tool use"
+      ],
+      "group": "Claude's toolkit"
+    },
+    {
+      "term": "Extended thinking",
+      "short": "The model reasoning through a problem before it answers.",
+      "plain": "With room to think, a model can work through harder problems: planning, math, tricky analysis. On current Claude models this happens automatically, and the Effort setting controls how hard Claude works. Older cheat sheets that tell you to switch thinking on manually are out of date.",
+      "example": "Raising Effort before asking Claude to compare three contracts.",
+      "stamp": "added",
+      "related": [
+        "Prompt"
+      ],
+      "group": "Claude's toolkit"
+    },
+    {
+      "term": "Project",
+      "short": "A Claude workspace that keeps files and instructions across chats.",
+      "plain": "Upload reference files and write instructions once; every new chat in the project starts with them. Good for ongoing work like a class, a client, or a newsletter.",
+      "example": "A project holding your style guide and last term's newsletters.",
+      "stamp": "added",
+      "related": [
+        "Context window",
+        "Skill"
+      ],
+      "group": "Claude's toolkit"
+    },
+    {
+      "term": "Artifact",
+      "short": "Something Claude makes that you can open, use, and share, like a document, chart, or small app.",
+      "plain": "Instead of a wall of text in the chat, Claude can produce a finished piece you can view on its own, keep editing, and share by link.",
+      "example": "An interactive budget calculator built from a description.",
+      "stamp": "added",
+      "related": [
+        "Project"
+      ],
+      "group": "Claude's toolkit"
+    },
+    {
+      "term": "Connector",
+      "short": "A link that lets Claude work with one of your apps, like email, calendar, or a drive.",
+      "plain": "With a connector turned on, Claude can read from and act in that app within the permissions you approve, so you don't have to copy and paste.",
+      "example": "Connecting Google Drive so Claude can find last quarter's report.",
+      "stamp": "added",
+      "related": [
+        "Model Context Protocol (MCP)",
+        "Tool use"
+      ],
+      "group": "Claude's toolkit"
+    },
+    {
+      "term": "Skill",
+      "short": "A saved set of instructions that teaches Claude to do a task the same way every time.",
+      "plain": "A skill packages how you want something done, like your report format or review checklist, so Claude follows it whenever that task comes up. Teach it once instead of re-explaining.",
+      "example": "A \"weekly update\" skill that always uses your headings and length.",
+      "stamp": "added",
+      "related": [
+        "Project",
+        "AI automation"
+      ],
+      "group": "Claude's toolkit"
+    },
+    {
+      "term": "Claude Code",
+      "short": "Anthropic's agentic coding tool that works directly in your files and terminal.",
+      "plain": "Claude Code reads a codebase, edits files, runs commands, and works with git. It runs in a terminal, code editors, a desktop app, and the web.",
+      "example": "Asking Claude Code to write tests for a module, run them, and fix failures.",
+      "stamp": "added",
+      "related": [
+        "AI agent",
+        "Tool use"
+      ],
+      "group": "Claude's toolkit"
+    }
   ]
 }

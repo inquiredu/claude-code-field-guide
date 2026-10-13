@@ -22,6 +22,6 @@ SOFTWARE.
 
 ---
 
-This MIT license covers the code in this repository: index.html,
-assets/, and scripts/. The written content in data/tools.json is licensed
+This MIT license covers the code in this repository: the .html pages,
+assets/, and scripts/. The written content in data/ is licensed
 separately under CC BY 4.0; see LICENSE-CONTENT.md.

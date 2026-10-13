@@ -8,14 +8,16 @@
   const inPath = p => data.lessons.filter(l => l.path === p);
 
   function renderNav(current) {
-    nav.innerHTML = data.paths.map(p => `
+    const wide = matchMedia("(min-width: 821px)").matches;
+    const doneCount = data.lessons.filter(l => lesson(l.id).done).length;
+    nav.innerHTML = `<details class="lesson-menu" ${wide ? "open" : ""}><summary>All lessons <span class="count">${doneCount} of ${data.lessons.length} done</span></summary><div class="lesson-menu-body">` + data.paths.map(p => `
       <section>
         <h2>${esc(p.title)}</h2>
         <ol>${inPath(p.id).map(l => {
           const st = lesson(l.id);
           return `<li><a href="#${l.id}" aria-current="${l.id === current}"><span class="dot ${st.done ? "done" : ""}" aria-hidden="true">${st.done ? "✓" : ""}</span>${esc(l.title)}${st.done ? '<span class="sr"> (done)</span>' : ""}</a></li>`;
         }).join("")}</ol>
-      </section>`).join("");
+      </section>`).join("") + `</div></details>`;
   }
 
   function quizHTML(l, st) {

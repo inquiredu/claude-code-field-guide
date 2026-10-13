@@ -1,79 +1,73 @@
-# Claude Code Field Guide
+# Claude Field Guide
 
-A searchable, verified guide to the 54 tools, skills, MCP servers, and articles on the "Claude Code Resource Bible" cheat sheet that circulated on Reddit.
+A free, hands-on learning site for using Claude well, built from viral Claude cheat sheets and checked against Anthropic's own documentation.
 
 **Live site:** https://inquiredu.org/claude-code-field-guide/
 
-The original image looked authoritative, but a link-by-link check on October 13, 2026 found that 16 of its 55 links were dead or wouldn't load and 8 entries described the wrong tool. This guide keeps every entry, explains each one in plain language from the project's own page or README, and stamps it with what the check found.
+Cheat sheets about Claude spread fast and age faster. The infographics behind this site recommended models that have since been replaced, listed keyboard shortcuts that no longer work, pointed to settings that moved, and mixed one author's preferences in with facts. This site keeps the useful ideas, checks every factual claim against Anthropic's help center and docs, labels opinions as opinions, and teaches by having you try each idea right away.
 
-## Stamps
+## What's here
 
-| Stamp | Meaning |
+| Page | What it does |
 |---|---|
-| Verified | The link works and the tool matches the description. |
-| Link fixed | The cheat sheet's link was dead. The card points to the official or best-known working equivalent and shows the original link crossed out. |
-| Relabeled | The link works, but the cheat sheet described the tool wrong. |
-| Heads-up | The link works, with a catch: deprecated, renamed, or worth a second look before use. |
-| Couldn't confirm | The original couldn't be found; the card shows the closest match. |
+| **Home** (`index.html`) | Three learning paths with saved progress, plus the reference shelf |
+| **Learn** (`learn.html`) | 14 lessons in three paths: *Start here*, *Make it yours*, *Build with Claude Code*. Each has a short idea, a **Try it** exercise with a copyable prompt, a "you've got it when" self-check, and a quick quiz |
+| **Glossary** (`glossary.html`) | 32 AI terms in plain language, with flashcards. Terms from the original "20 Basic AI Terms" list are stamped Accurate or Sharpened, with the reason for any correction |
+| **Commands** (`commands.html`) | 135 Claude Code commands, shortcuts, and settings from two cheat sheets, each stamped Verified, Changed, Not in docs, or Sheets missed, linked to the docs page |
+| **Tools** (`tools.html`) | 54 add-ons, skills, and MCP servers from the "Claude Code Resource Bible," every link tested |
+| **Sheet check** (`check.html`) | 32 claims from five infographics, stamped Current, Outdated, Wrong, Opinion, or Unverified, with a "guess first" mode |
 
-## Features
+Progress, stars, and quiz answers are saved only in the visitor's browser. Nothing is collected.
 
-- Search across names, summaries, notes, and URLs
-- Filter by category or by stamp
-- **Draw a card** jumps to a random tool
-- **★ My stack** saves favorites in your browser (nothing leaves your device)
-- **Share card** copies a direct link to one tool, like `#tool-31`
-- Light and dark themes follow your system setting
+## How claims were checked
+
+Every factual claim was checked on October 13, 2026 against Anthropic's own sources only: support.claude.com, code.claude.com/docs, docs.claude.com, claude.com, and anthropic.com. No AI-generated encyclopedias, blogs, or forums were used as evidence. Each lesson, claim, and command links to the page it was checked against.
+
+## Monthly link check
+
+A GitHub Action (`.github/workflows/link-check.yml`) runs `scripts/check_links.py` on the 1st of every month and can be started any time from the **Actions** tab with **Run workflow**. It checks every tool link plus every official source the lessons, sheet check, and command reference cite.
+
+- GitHub repos are checked through the GitHub API, which flags missing, archived, and renamed repos.
+- Other links get a web request. A 404, a 410, or a domain that no longer exists counts as broken.
+- Sites that block automated checks (403, 429, timeouts) are listed as "couldn't check" but never open an issue on their own.
+
+When something breaks, the workflow opens an issue labeled `link-check` with a checklist, or comments on the open one, and closes it when a later run passes. A moved help-center page can mean the facts on it changed, so re-read the page before swapping the link.
 
 ## How it's built
 
 A static site with no build step, served by GitHub Pages.
 
 ```
-index.html          page structure
-assets/style.css    design tokens and layout
-assets/app.js       search, filters, stars, deep links
-assets/favicon.svg
-data/tools.json     every entry: summary, stamp, notes, current and original URLs
+index.html, learn.html, glossary.html, commands.html, tools.html, check.html
+assets/style.css        shared design tokens and layout
+assets/core.js          shared helpers: saved progress, copy buttons, data loading
+assets/<page>.js        one script per page
+data/lessons.json       paths and lessons
+data/glossary.json      terms
+data/commands.json      Claude Code commands with verdicts and sources
+data/claims.json        cheat-sheet claims with verdicts and sources
+data/tools.json         tool guide entries
+scripts/check_links.py  monthly link checker
 ```
 
-## Updating an entry
+All content lives in `data/`. To fix or add something, edit the JSON and commit. Each file's fields match what you see on the page; copy an existing entry as a template.
 
-Edit `data/tools.json` and commit. Each tool looks like this:
+## Sources and credits
 
-```json
-{
-  "number": 13,
-  "category": "MCP Servers",
-  "name": "Playwright",
-  "status": "fixed",
-  "summary": "Microsoft's official Playwright MCP server...",
-  "poster_blurb": "Browser automation (official)",
-  "note": "Optional caveat shown under the summary.",
-  "url": "https://github.com/microsoft/playwright-mcp",
-  "original_url": "https://github.com/anthropics/mcp-server-playwright"
-}
-```
+Built from infographics shared on Reddit:
 
-`status` is one of `ok`, `fixed`, `relabel`, `heads`, or `unk`. Leave out `note` and `original_url` when they don't apply. If you re-verify the whole list, update the date in `data/tools.json` and in the page header.
+- "Claude Code Resource Bible" (SATNA_PROJECT community)
+- "How to Claude: The One Cheat Sheet to Save" (AIDigitalServices community; author not shown)
+- "Claude: Chat vs Cowork vs Projects" and "100 Tips to Master Claude" by Ruben Hassid, How to AI
+- "Every Claude Code Command" by Charlie Hills
+- "Claude Code Cheat Sheet" v2.1.81 (vibecoders_ community)
+- "20 Basic But Important AI Terms" by Shushant Lakhyani
 
-## Monthly link check
-
-A GitHub Action (`.github/workflows/link-check.yml`) runs `scripts/check_links.py` on the 1st of every month and can be started any time from the **Actions** tab with **Run workflow**.
-
-- GitHub repos are checked through the GitHub API, which flags missing, archived, and renamed repos.
-- Other links get a web request. A 404, a 410, or a domain that no longer exists counts as broken.
-- Sites that block automated checks (403, 429, timeouts) are listed as "couldn't check" so a human can confirm, but they never trigger an issue on their own.
-
-When something is broken or worth a look, the workflow opens an issue labeled `link-check` with a checklist, or adds a comment to the open one. When a later run passes, it closes the issue.
+The original graphics aren't reproduced; ideas are restated in our own words, and short quotes of the original claims appear only for comparison. Not affiliated with Anthropic.
 
 ## License
 
-- **Code** (`index.html`, `assets/`, `scripts/`): [MIT](LICENSE)
-- **Written content** (summaries, notes, and stamps in `data/tools.json`): [CC BY 4.0](LICENSE-CONTENT.md)
+- **Code** (`*.html`, `assets/`, `scripts/`): [MIT](LICENSE)
+- **Written content** (lessons, glossary, summaries, notes, and stamps in `data/`): [CC BY 4.0](LICENSE-CONTENT.md)
 
-Tool names and descriptions belong to their projects, and the cheat sheet's original wording is quoted only for comparison.
-
-## Credits
-
-Original list: the "Claude Code Resource Bible" image shared in the SATNA_PROJECT community on Reddit. Verification, summaries, and site by [inquiredu](https://inquiredu.org).
+Made by [inquiredu](https://inquiredu.org).
