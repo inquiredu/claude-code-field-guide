@@ -57,6 +57,23 @@ Edit `data/tools.json` and commit. Each tool looks like this:
 
 `status` is one of `ok`, `fixed`, `relabel`, `heads`, or `unk`. Leave out `note` and `original_url` when they don't apply. If you re-verify the whole list, update the date in `data/tools.json` and in the page header.
 
+## Monthly link check
+
+A GitHub Action (`.github/workflows/link-check.yml`) runs `scripts/check_links.py` on the 1st of every month and can be started any time from the **Actions** tab with **Run workflow**.
+
+- GitHub repos are checked through the GitHub API, which flags missing, archived, and renamed repos.
+- Other links get a web request. A 404, a 410, or a domain that no longer exists counts as broken.
+- Sites that block automated checks (403, 429, timeouts) are listed as "couldn't check" so a human can confirm, but they never trigger an issue on their own.
+
+When something is broken or worth a look, the workflow opens an issue labeled `link-check` with a checklist, or adds a comment to the open one. When a later run passes, it closes the issue.
+
+## License
+
+- **Code** (`index.html`, `assets/`, `scripts/`): [MIT](LICENSE)
+- **Written content** (summaries, notes, and stamps in `data/tools.json`): [CC BY 4.0](LICENSE-CONTENT.md)
+
+Tool names and descriptions belong to their projects, and the cheat sheet's original wording is quoted only for comparison.
+
 ## Credits
 
 Original list: the "Claude Code Resource Bible" image shared in the SATNA_PROJECT community on Reddit. Verification, summaries, and site by [inquiredu](https://inquiredu.org).
