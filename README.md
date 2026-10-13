@@ -35,11 +35,13 @@ When something breaks, the workflow opens an issue labeled `link-check` with a c
 
 ## How it's built
 
-A static site with no build step, served by GitHub Pages.
+A static site with no build step, served by GitHub Pages. It uses the inquiredu design system (Electric Lake palette): `assets/inquiredu.css` is copied unchanged from the design system, and `assets/style.css` builds every page on its semantic tokens, so the Ivory and Night themes both work. Pages set `data-theme="auto"` to follow the visitor's light or dark setting.
 
 ```
 index.html, learn.html, glossary.html, commands.html, tools.html, check.html
-assets/style.css        shared design tokens and layout
+assets/inquiredu.css    inquiredu design system tokens and base styles (do not edit; regenerate from the design system)
+assets/style.css        site layout and components on inquiredu tokens
+assets/brand/           inquiredu wordmark and endorsed lockup SVGs
 assets/core.js          shared helpers: saved progress, copy buttons, data loading
 assets/<page>.js        one script per page
 data/lessons.json       paths and lessons

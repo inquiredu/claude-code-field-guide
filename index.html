@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -16,7 +16,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/inquiredu.css">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -27,10 +27,10 @@
 </div></nav>
 <div class="wrap">
   <header class="hero">
-    <div class="eyebrow">Free · no sign-up · checked October 2026</div>
+    <div class="row" style="gap:var(--space-3)"><span class="stamp s-fixed" title="Built and live; content is still being reviewed">Alpha</span><span class="eyebrow">Free guide · no sign-up · checked October 2026</span></div>
     <h1>Learn Claude <span style="color:var(--accent)">by doing</span></h1>
     <p class="lede">Short lessons where you try each idea in Claude right away, then check yourself. Everything here started as a viral cheat sheet; every fact was checked against Anthropic's own documentation, and opinions are labeled as opinions.</p>
-    <div class="row"><a class="btn" id="cta" href="learn.html">Start the first lesson</a><a class="btn ghost" href="check.html">See what the cheat sheets got wrong</a></div>
+    <div class="row"><a class="btn accent" id="cta" href="learn.html">Start the first lesson</a><a class="btn ghost" href="check.html">See what the cheat sheets got wrong</a></div>
   </header>
 
   <h2 class="section-title" id="paths">Pick a path</h2>
@@ -48,16 +48,16 @@
     <a href="check.html"><b>Sheet check</b><span>Viral claims: current, outdated, or opinion?</span></a>
   </div>
 
-  <section class="why-box">
-    <h2>Why this exists</h2>
+  <section class="why-box"><div class="in">
+    <h2><span class="star-glyph" aria-hidden="true">✦</span> Why this exists</h2>
     <p>Cheat sheets about Claude spread fast and age faster. The ones behind this site recommended models that have since been replaced, listed keyboard shortcuts that no longer work, and mixed one author's preferences in with facts.</p>
     <p>Here, each claim is stamped with what checking it found, and each lesson links to the official page it was checked against. Your progress is saved only in this browser.</p>
-  </section>
-
-  <footer>
-    <p>Made by <a href="https://inquiredu.org">inquiredu</a>. Built from infographics shared on Reddit; original authors are credited where known. Not affiliated with Anthropic.</p>
-    <p>Spotted something out of date? <a href="https://github.com/inquiredu/claude-code-field-guide/issues">Open an issue</a>. Code under <a href="https://github.com/inquiredu/claude-code-field-guide/blob/main/LICENSE">MIT</a>; written content under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
-  </footer>
+  </div></section>
+<footer class="site-foot">
+  <a class="lockup" href="https://inquiredu.org" aria-label="inquiredu, by Sean Beaverson"><img class="std" src="assets/brand/inquiredu-lockup-endorsed.svg" alt="inquiredu, by Sean Beaverson"><img class="rev" src="assets/brand/inquiredu-lockup-endorsed-reversed.svg" alt="inquiredu, by Sean Beaverson"></a>
+  <p>A free guide from inquiredu. Built from infographics shared on Reddit, with original authors credited where known. Not affiliated with Anthropic.</p>
+  <p>Spotted something out of date? <a href="https://github.com/inquiredu/claude-code-field-guide/issues">Open an issue</a>. Code under <a href="https://github.com/inquiredu/claude-code-field-guide/blob/main/LICENSE">MIT</a>; written content under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Progress and stars are saved only in your browser.</p>
+</footer>
 </div>
 <script src="assets/core.js"></script>
 <script>

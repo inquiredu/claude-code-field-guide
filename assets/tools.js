@@ -33,7 +33,7 @@
         <a class="go" href="${esc(d.url)}" target="_blank" rel="noopener">Open</a>
         <button type="button" data-copy="${esc(d.url)}">Copy link</button>
         <button type="button" data-share="${d.number}">Share card</button>
-        <button type="button" class="star" data-star="${d.number}" aria-pressed="${stars.has(d.number)}" aria-label="Add ${esc(d.name)} to my stack">★</button>
+        <button type="button" class="star" data-star="${d.number}" aria-pressed="${stars.has(d.number)}" aria-label="Add ${esc(d.name)} to my stack">✦</button>
       </div></article>`;
   }
 
@@ -45,7 +45,7 @@
       (!state.mine || stars.has(d.number)) &&
       (!q || [d.name, d.summary, d.poster_blurb, d.note || "", d.category, d.url].join(" ").toLowerCase().includes(q)));
     $("deck").innerHTML = list.length ? list.map(card).join("") :
-      `<div class="empty">${state.mine && !stars.size ? "Your stack is empty. Tap ★ on any card to add it." : "Nothing matches. Try a broader word or clear a filter."}</div>`;
+      `<div class="empty">${state.mine && !stars.size ? "Your stack is empty. Tap ✦ on any card to add it." : "Nothing matches. Try a broader word or clear a filter."}</div>`;
     $("count").textContent = `Showing ${list.length} of ${D.length}`;
     $("mineN").textContent = stars.size;
     return list;
